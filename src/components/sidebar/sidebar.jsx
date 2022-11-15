@@ -52,7 +52,7 @@ function Sidebar() {
                 className={cn('sidebar__button', {'sidebar__button--open': selected === index})}
                 type='button'
                 aria-label={`open a section ${label}`}
-                onClick={() => openSectionHandler(index)}
+                onClick={() => handleOpenSection(index)}
               >
                 <ArrowIcon />
               </button>
