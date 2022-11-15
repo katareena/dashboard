@@ -58,12 +58,16 @@ function Sidebar() {
               </button>
             </div>        
 
-            <div className='sidebar__item-content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus soluta aperiam voluptates sapiente distinctio rem eius. Dolorum accusamus reprehenderit aliquid doloribus soluta, maxime sunt, optio, minima ea aspernatur quos. Nisi sit autem quae quia iusto totam velit dolores voluptatibus vero!</div>
+            <ul className='sidebar__item-content'>
+              <li>lorem</li>
+              <li>lorem</li>
+              <li>lorem</li>
+            </ul>
           </li>
         ))}
       </ul> 
 
-      <ul className='sidebar__list sidebar__list--decor'>
+      <ul className='sidebar__list sidebar__list--decor sidebar__list--user'>
         {secondaryLinksArray.map(({ icon, label, to }) => (
           <li className='sidebar__item' key={label}>
             <div className='sidebar__item-inner'>
@@ -100,9 +104,9 @@ const linksArray = [
     button: true,
   },
   {
-    label: 'Shops',
+    label: 'Shop',
     icon: <ShopIcon />,
-    to: '/shops',
+    to: '/shop',
     button: true,
   },
   {

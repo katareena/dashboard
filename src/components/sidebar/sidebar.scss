@@ -14,7 +14,8 @@
 }
 
 .sidebar__logo {
-  height: 65px;
+  height: 66px;
+  margin-left: 3px;
   display: flex;
   align-items: center;
 
@@ -33,15 +34,27 @@
 
 .sidebar__list {  
   padding-top: 23px;
-  padding-bottom: 32px;
+  padding-bottom: 18px;
+  position: relative;
 
   &.sidebar__list--grow {
     flex-grow: 1;
   }
 }
 
-.sidebar__list--decor {
-  border-top: solid 1px v.$background-light-minor2;
+.sidebar__list--decor::before {
+  position: absolute;
+  content: '';
+  top: 3px;
+  left: 10px;
+
+  height: 1px;
+  width: 89%;
+  background: v.$background-light-minor2;
+}
+
+.sidebar__list--user {
+  margin-left: -12px;
 }
 
 .sidebar__item {
@@ -49,12 +62,16 @@
   flex-direction: column;
   justify-content: center;
   height: 54px;
-  padding: 0 12px;
+  padding: 0 14px;
   border-radius: 10px;
 
   background-color: transparent;
   transition: all 0.3s ease;
   cursor: pointer;
+
+  &:not(:last-of-type) {
+    margin-bottom: 6px;
+  }
 
   &:hover,
   &:focus {
@@ -78,6 +95,13 @@
 .sidebar__item-content {
   display: none;
   padding-bottom: 15px;
+
+  & li {
+    list-style: inside;
+    margin-left: 40px;
+    padding: 10px 0;
+    color: v.$text-minor;
+  }
 }
 
 .sidebar__item--open {
@@ -102,7 +126,7 @@
 .sidebar__icon {
   display: block;
   font-size: 0;
-  margin-right: 9%;
+  margin-right: 6%;
 
   & svg {
     fill: v.$text-minor;
@@ -112,12 +136,17 @@
 .sidebar__label {
   font-weight: 500;
   color: v.$text-minor;
+  margin-top: 1px;
 }
 
 .sidebar__button {
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
+
+  & svg {
+    margin-bottom: 2px;
+  } 
 }
 
 .sidebar__button--open {
