@@ -1,0 +1,97 @@
+@use '../../global-styles/variables' as v;
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 758px;
+  min-width: 200px;
+
+  &:hover,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.search__inner {
+  width: 100%;
+  max-width: 684px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  padding-right: 16.5px;
+  background-color: v.$background-light-primary;
+  border: 1px solid v.$background-light-minor2;
+  border-radius: 10px;
+  margin-right: 10px;
+  transition: all 0.5s ease;  
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 1px rgba(v.$accent2, 0.9);
+    transition: all 0.5s ease;
+  }
+}
+
+.search__button {
+  width: 51px;
+  padding: 0 7px;
+  height: inherit;
+  color: v.$background-light-minor2;
+
+  & svg {
+    margin-top: 5px;
+    margin-left: 3px;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: v.$accent2;
+  }  
+}
+
+.search__box {
+  flex-grow: 1;
+}
+
+.search__box input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+
+  &::placeholder {
+    letter-spacing: -1px;
+  }
+
+  &:hover,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.search__add-button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 100px;
+  background-color: v.$accent2;
+  transition: all 0.3s ease;
+
+  & svg {
+    stroke: v.$white;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    stroke: v.$accent1;
+    transition: all 0.3s ease;
+  }
+}
