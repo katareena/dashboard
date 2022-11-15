@@ -1,0 +1,30 @@
+@use '../../global-styles/variables' as v;
+
+.home-page {
+  display: grid;
+  grid-template-columns: minmax(min-content, 23.33%) minmax(min-content, 76.67%);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0;
+
+  @media screen and (min-width: v.$over-desktop) {
+    grid-template-columns: minmax(min-content, 336px) 1fr;
+  }
+
+  @media screen and (max-width: v.$desktop-width) {
+    grid-template-columns: minmax(min-content, 315px) 1fr;    
+  }
+}
+
+.home-page__inner {
+  display: flex;
+  flex-direction: column;
+
+  background-color: yellowgreen;
+}
+
+.home-page__main {
+  flex-grow: 1;
+  padding: 23px 20px 25px 20px;
+
+  background-color: plum;
+}

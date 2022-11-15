@@ -49,18 +49,18 @@ img {
 }
 
 a {
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 button {
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 input {
   font-family: 'Work Sans', 'Tahoma', sans-serif;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 input::-webkit-outer-spin-button,
@@ -70,4 +70,8 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
+}
+
+svg {
+  fill: v.$text-minor;
 }

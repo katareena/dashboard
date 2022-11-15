@@ -1,0 +1,126 @@
+@use '../../global-styles/variables' as v;
+
+.sidebar {
+  width: 100%;
+  max-width: 336px;
+  min-width: 315px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 26px;
+  padding-right: 26px;
+}
+
+.sidebar__logo {
+  height: 65px;
+  display: flex;
+  align-items: center;
+
+}
+
+.sidebar__logo-link {
+  display: block;
+  width: 136px;
+  height: 35px;
+
+  img {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+.sidebar__list {  
+  padding-top: 23px;
+  padding-bottom: 32px;
+
+  &.sidebar__list--grow {
+    flex-grow: 1;
+  }
+}
+
+.sidebar__list--decor {
+  border-top: solid 1px v.$background-light-minor2;
+}
+
+.sidebar__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 54px;
+  padding: 0 12px;
+  border-radius: 10px;
+
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: v.$background-light-minor2;
+    transition: all 0.3s ease;
+  }
+
+  &:hover .sidebar__link .sidebar__label,
+  &:focus .sidebar__link .sidebar__label {
+    color: v.$accent2;
+  }
+
+  &:hover .sidebar__link .sidebar__icon svg,
+  &:focus .sidebar__link .sidebar__icon svg,
+  &:hover .sidebar__button svg,
+  &:focus .sidebar__button svg {
+    fill: v.$accent2;
+  }
+}
+
+.sidebar__item-content {
+  display: none;
+  padding-bottom: 15px;
+}
+
+.sidebar__item--open {
+  height: min-content;
+
+  & .sidebar__item-content {
+    display: block;
+  }
+}
+
+.sidebar__item-inner {
+  display: flex;
+  align-items: center;
+  height: 54px;
+}
+
+.sidebar__link {
+  flex-grow: 1;
+  display: flex;
+}
+
+.sidebar__icon {
+  display: block;
+  font-size: 0;
+  margin-right: 9%;
+
+  & svg {
+    fill: v.$text-minor;
+  }  
+}
+
+.sidebar__label {
+  font-weight: 500;
+  color: v.$text-minor;
+}
+
+.sidebar__button {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar__button--open {
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
