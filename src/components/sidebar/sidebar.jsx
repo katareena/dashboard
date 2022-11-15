@@ -19,8 +19,8 @@ import cn from 'classnames';
 function Sidebar() {
   const [selected, setSelected] = useState(null);
 
-  function openSectionHandler(index) {
-    console.log('open Section');
+  function handleOpenSection(index) {
+    console.log('toggle Section');
     if (selected === index) {
       return setSelected(null);
     }
