@@ -88,13 +88,13 @@ const linksArray = [
   {
     label: 'Home',
     icon: <HomeIcon />,
-    to: '/',
+    to: AppRoute.Root,
     button: true,
   },
   {
     label: 'Product',
     icon: <ProductsIcon />,
-    to: '/product',
+    to: AppRoute.Products,
     button: true,
   },
   {
