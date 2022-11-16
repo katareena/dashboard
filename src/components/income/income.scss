@@ -1,0 +1,25 @@
+.income__list {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.income__item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+}
+
+.income__col {
+  display: block;
+  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 5px;
+}
+
+.income__col-label {
+  text-align: center;
+}

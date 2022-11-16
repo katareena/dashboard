@@ -9,3 +9,8 @@ export const AuthorizationStatus = {
   NoAuth: 'NO_AUTH',
   Unknown: 'UNKNOWN',
 }
+
+export const ChartColor = {
+  First: '#454EEC',
+  Second: '#98F8A0',
+}

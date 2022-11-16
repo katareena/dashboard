@@ -7,8 +7,10 @@ import UserNav from '../user-nav/user-nav';
 function Header () {
   return (
     <header className='header'>
-      <SearchForm />
-      <UserNav />
+      <div className='header__wrap'>
+        <SearchForm />
+        <UserNav />
+      </div>
     </header>
   )
 }

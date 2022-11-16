@@ -1,0 +1,95 @@
+@use '../../global-styles/variables' as v;
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.filter__inner {
+  display: flex;
+  height: 100%;
+}
+
+.filter__filtered {
+  width: 40px;
+
+  & svg {
+    fill: v.$text-minor;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: v.$text-accent;
+  }
+}
+
+.filter__toggle {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: v.$text-accent;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+
+  & svg {
+    fill: v.$text-accent;
+    margin-left: 5px;
+  }
+
+  &:hover,
+  &:focus {
+    color: v.$text-major;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: v.$text-major;
+  }
+}
+
+.filter__toggle span {
+  text-align: end;
+}
+
+.filter__toggle--open svg {
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+.filter__dropdown {
+  position: absolute;
+  top: calc(100% + 1px);
+  right: 0;
+  z-index: 1;
+  display: none;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+}
+
+.filter__dropdown--active {
+  display: block;
+}
+
+.filter__option {
+  min-width: 150px;
+  padding: 10px 16px 14px;
+  font-size: 14px;
+  outline: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: v.$background-light-minor1;
+    transition: all 0.3s ease;
+  }
+}

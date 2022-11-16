@@ -1,0 +1,16 @@
+@use '../../global-styles/variables' as v;
+
+.comments__item p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: v.$text-major;
+
+}
+
+.comments__item span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 108.9%;
+  color: v.$text-minor; 
+}

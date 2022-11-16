@@ -2,9 +2,7 @@
 
 .sidebar {
   width: 100%;
-  max-width: 336px;
-  min-width: 315px;
-  height: 100vh;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -90,6 +88,12 @@
   &:focus .sidebar__button svg {
     fill: v.$accent2;
   }
+}
+
+.sidebar__label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .sidebar__item-content {
