@@ -1,0 +1,56 @@
+@use '../../global-styles/variables' as v;
+
+.user-nav {
+  display: flex;
+}
+
+.user-nav__item--avatar {
+  margin-left: 10px;
+}
+
+.user-nav__item--notifications {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    background-color: v.$accent1;
+    width: 8.33px;
+    height: 8.33px;
+    border-radius: 100px;
+
+    top: 15px;
+    right: 13px;
+  }
+}
+
+.user-nav__link {
+  height: 100%;
+  width: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-nav__avatar {
+  display: block;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+
+  background-color: v.$background-light-minor3;
+  color: v.$background-light-minor2;   
+
+  &::before {
+    position: absolute;
+    content: '';
+
+    top: 12px;
+    left: 0;
+    right: 0;
+    text-align: center;    
+  }
+}
