@@ -1,5 +1,9 @@
 @use '../../global-styles/variables' as v;
 
+.experts {
+  padding-bottom: 20px;
+}
+
 .experts__wrap {
   display: flex;
   justify-content: space-between;

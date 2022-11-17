@@ -3,11 +3,11 @@
 .home__wrap {
   width: 100%;
   max-width: 1064px;
-  margin: 0 auto;  
+  margin: 0 auto;
 
   display: grid;
   grid-template-columns: 31.20% 31.20% 33.83%;
-  grid-template-rows: 60px 184.5px 184.5px 156px 189px;
+  grid-template-rows: auto minmax(184.5px, max-content) minmax(184.5px, max-content) 156px minmax(189px, max-content);
   grid-column-gap: 1.88%;
   grid-row-gap: 20px;
   grid-template-areas:
@@ -17,9 +17,8 @@
     'aria-2 aria-2 aria-3'
     'aria-2 aria-2 aria-4';
 
-  @media screen and (max-width: v.$desktop-width) {
+  @media screen and (max-width: v.$desktopWidth) {
     grid-template-columns: 1fr 1fr;
-
     grid-template-areas:
     'title title'
     'aria-1 aria-1'
@@ -37,7 +36,6 @@
   font-size: 50px;
   letter-spacing: -2.5px;
   line-height: 60px;
-  margin-bottom: 20px;
 
   grid-area: title;
 } 
@@ -46,17 +44,9 @@
   background: v.$white;
   border-radius: 16px;
   padding: 20px; 
+  padding-bottom: 0;
   display: flex;
-  flex-direction: column; 
-
-  & section {
-    display: flex;
-    flex-direction: column; 
-  }
-
-  & section:not(:last-of-type) {
-    margin-bottom: 40px;
-  }
+  flex-direction: column;
 }
 
 .home__block--grid-aria-1 {

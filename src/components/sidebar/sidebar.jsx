@@ -15,7 +15,6 @@ import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow-icon.svg';
 import './sidebar.scss';
 import cn from 'classnames';
 
-
 function Sidebar() {
   const [selected, setSelected] = useState(null);
 

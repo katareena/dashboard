@@ -1,4 +1,9 @@
 @use '../../global-styles/variables' as v;
+@use '../../global-styles/mixins' as m;
+
+.overview {
+  margin-bottom: 40px;
+}
 
 .overview__wrap{
   display: flex;
@@ -6,7 +11,7 @@
 }
 
 .overview__box {
-  padding: 34px 20px 30px 20px;
+  padding: 34px 3.2% 30px 3.2%;
   flex-shrink: 0;
   flex: 0 0 50%;
 }
@@ -51,8 +56,8 @@
 }
 
 .overview__numbers {
+  @include m.adaptiv-font(40, 24);
   font-weight: 500;
-  font-size: 40px;
   line-height: 48px;
-  color: v.$text-major;
+  color: v.$text-major;  
 }

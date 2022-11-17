@@ -4,6 +4,7 @@
   height: 110px;
   padding: 20px 0;
   display: flex;
+  flex-grow: 1;
   align-items: center;
   border-bottom: solid 1px v.$background-light-minor1;
 }

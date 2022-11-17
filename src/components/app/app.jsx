@@ -15,7 +15,6 @@ function App() {
           <Route path={AppRoute.Products} element={<Products /> } />
         </Route>
 
-
         <Route path={AppRoute.NoFoundPage} element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

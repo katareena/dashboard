@@ -4,11 +4,11 @@
   display: grid;
   grid-template-columns: minmax(240px, 23.33%) 76.67%;
 
-  @media screen and (min-width: v.$over-desktop) {
+  @media screen and (min-width: v.$maxWidth) {
     grid-template-columns: minmax(min-content, 336px) 1fr;
   }
 
-  @media screen and (max-width: v.$desktop-width) {
+  @media screen and (max-width: v.$desktopWidth) {
     grid-template-columns: 240px 1fr;
   }
 }
