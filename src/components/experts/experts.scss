@@ -1,0 +1,39 @@
+@use '../../global-styles/variables' as v;
+
+.experts__wrap {
+  display: flex;
+  margin-top: 10px;
+}
+
+.experts__item {
+  display: flex;
+}
+
+.experts__img {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.experts__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.experts__name {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: v.$text-major;
+}
+
+.experts__experience {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: v.$text-minor;
+}

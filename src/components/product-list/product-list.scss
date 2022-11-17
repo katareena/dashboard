@@ -1,0 +1,33 @@
+@use '../../global-styles/variables' as v;
+
+.product-list__link {
+  font-weight: 400;
+  font-size: 16px;
+  color: v.$accent2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+
+  &:hover,
+  &:focus {
+    color: v.$accent1;
+  }
+
+  &:hover .product-list__link-icon svg,
+  &:focus .product-list__link-icon svg {
+    fill: v.$accent1;
+    transition: all 0.3s ease;
+  }
+}
+
+.product-list__link-text {
+  margin-right: 8px;
+}
+
+.product-list__link-icon svg {
+  fill: v.$accent2;
+  transition: all 0.3s ease;
+  margin-bottom: -1px;
+}

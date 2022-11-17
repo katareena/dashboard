@@ -1,0 +1,49 @@
+@use '../../global-styles/variables' as v;
+
+.overview__wrap{
+  display: flex;
+  width: 100%;
+}
+
+.overview__box {
+  padding: 34px 20px 30px 20px;
+  flex-shrink: 0;
+  flex: 0 0 50%;
+}
+
+.overview__box--left {
+  background: v.$background-light-minor1;
+  border-radius: 16px 0px 0px 16px;
+}
+
+.overview__box--right {
+  background: v.$background-light-minor2;
+  border-radius: 0px 16px 16px 0px;
+}
+
+.overview__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.overview__title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: v.$text-minor;
+  margin-bottom: 10px;
+}
+
+.overview__percents {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: v.$text-accent;
+}
+
+.overview__numbers {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  color: v.$text-major;
+}
