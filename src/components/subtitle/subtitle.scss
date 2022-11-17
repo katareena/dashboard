@@ -17,5 +17,13 @@
 
   & h3 span {
     color: v.$text-minor;
+
+    @media screen and (max-width: v.$tabletWidth) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: v.$tabletWidth) {
+    text-transform: capitalize;
   }
 }

@@ -13,6 +13,10 @@
 .experts__item {
   display: flex;
   max-width: 190px;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    flex-direction: column;
+  }
 }
 
 .experts__img {
@@ -21,6 +25,10 @@
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    margin-bottom: 10px;
+  }
 }
 
 .experts__box {
@@ -28,6 +36,10 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0 10px;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    padding: 0;
+  }
 }
 
 .experts__name {

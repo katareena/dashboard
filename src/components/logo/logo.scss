@@ -1,0 +1,17 @@
+.logo {
+  height: 66px;
+  margin-left: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.logo__link {
+  display: block;
+  width: 136px;
+  height: 35px;
+
+  img {
+    width: inherit;
+    height: inherit;
+  }
+}

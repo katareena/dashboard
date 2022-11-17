@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../constants/constants';
-import logo from '../../assets/logo.svg';
+import Logo from '../logo/logo';
 import { ReactComponent as HomeIcon } from '../../assets/icons/home-icon.svg';
 import { ReactComponent as ProductsIcon } from '../../assets/icons/products-icon.svg';
 import { ReactComponent as CustomersIcon } from '../../assets/icons/customers-icon.svg';
@@ -29,13 +29,9 @@ function Sidebar() {
 
   return (
     <nav className='sidebar'>
-      <div className='sidebar__logo'>
-        <Link className='sidebar__logo-link' to={AppRoute.Root}>
-          <img src={logo} width='136' height='35' alt='Dashboard app Logo' />
-        </Link>
-      </div>
+      <Logo />
 
-      <ul className='sidebar__list sidebar__list--grow'>
+      <ul className='sidebar__list sidebar__list--descktop sidebar__list--grow'>
         {linksArray.map(({ icon, label, to}, index) => (
           <li
             className={cn('sidebar__item', {'sidebar__item--open': selected === index})}
@@ -66,8 +62,21 @@ function Sidebar() {
         ))}
       </ul> 
 
-      <ul className='sidebar__list sidebar__list--decor sidebar__list--user'>
+      <ul className='sidebar__list sidebar__list--descktop sidebar__list--decor sidebar__list--user'>
         {secondaryLinksArray.map(({ icon, label, to }) => (
+          <li className='sidebar__item' key={label}>
+            <div className='sidebar__item-inner'>
+              <Link className='sidebar__link' to={to}>
+                <span className='sidebar__icon'>{icon}</span>
+                <span className='sidebar__label'>{label}</span>
+              </Link>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <ul className='sidebar__list sidebar__list--mobile'>
+        {mobileLinksArray.map(({ icon, label, to }) => (
           <li className='sidebar__item' key={label}>
             <div className='sidebar__item-inner'>
               <Link className='sidebar__link' to={to}>
@@ -127,19 +136,40 @@ const secondaryLinksArray = [
     label: 'Settings',
     icon: <SettingsIcon />,
     to: '/settings',
-    button: false,
   },
   {
     label: 'Help & Getting Started',
     icon: <HelpdeskIcon />,
     to: '/helpdesk',
-    button: false,
   },
   {
     label: 'Log Out',
     icon: <LogoutIcon />,
     to: '/',
-    button: false,
+  },
+];
+
+const mobileLinksArray = [
+  {
+    label: 'Home',
+    icon: <HomeIcon />,
+    to: AppRoute.Root,
+  },
+  {
+    label: 'Products',
+    icon: <ProductsIcon />,
+    to: AppRoute.Products,
+  },
+
+  {
+    label: 'Help Desk',
+    icon: <HelpdeskIcon />,
+    to: '/helpdesk',
+  },
+  {
+    label: 'Other',
+    icon: <LogoutIcon />,
+    to: '/',
   },
 ];
 

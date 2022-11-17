@@ -3,6 +3,22 @@
 .user-nav {
   display: flex;
   margin-left: 40px;
+
+  @media screen and (max-width: v.$mobileWidth) {
+    margin-left: 10px;
+  }
+}
+
+.user-nav__item {
+  @media screen and (max-width: v.$mobileWidth) {
+    display: none;
+  }
+}
+
+.user-nav__item.user-nav__item--avatar {
+  @media screen and (max-width: v.$mobileWidth) {
+    display: block;
+  }
 }
 
 .user-nav__item--avatar {

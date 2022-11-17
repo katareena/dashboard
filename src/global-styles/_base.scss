@@ -51,11 +51,19 @@ img {
 a {
   transition: all 0.3s ease;
   cursor: pointer;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    cursor: auto;
+  }
 }
 
 button {
   transition: all 0.3s ease;
   cursor: pointer;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    cursor: auto;
+  }
 }
 
 input {

@@ -8,22 +8,43 @@
 .overview__wrap{
   display: flex;
   width: 100%;
+
+  @media screen and (max-width: v.$mobileWidth) {
+    flex-direction: column;
+  }
 }
 
 .overview__box {
   padding: 34px 3.2% 30px 3.2%;
   flex-shrink: 0;
   flex: 0 0 50%;
+
+  @media screen and (max-width: v.$mobileWidth) {
+    flex: 0 0 100%;
+    padding: 15px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .overview__box--left {
   background-color: v.$background-light-minor1;
   border-radius: 16px 0px 0px 16px;
+
+  @media screen and (max-width: v.$mobileWidth) {
+    border-radius: 16px;
+  }
 }
 
 .overview__box--right {
   background-color: v.$background-light-minor2;
   border-radius: 0px 16px 16px 0px;
+
+  @media screen and (max-width: v.$mobileWidth) {
+    border-radius: 16px;
+  }
 }
 
 .overview__description {

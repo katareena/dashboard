@@ -8,24 +8,21 @@
 
   padding-left: 7.97%;
   padding-right: 7.97%;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 0;
+    grid-area: menu;
+    background-color: v.$background-light-minor1;
+    z-index: 1;
+    box-shadow: 0 -3px 10px -5px rgba(v.$black, 0.3);
+  }
 }
 
-.sidebar__logo {
-  height: 66px;
-  margin-left: 3px;
-  display: flex;
-  align-items: center;
-
-}
-
-.sidebar__logo-link {
-  display: block;
-  width: 136px;
-  height: 35px;
-
-  img {
-    width: inherit;
-    height: inherit;
+.sidebar .logo {
+  @media screen and (max-width: v.$tabletWidth) {
+    display: none;
   }
 }
 
@@ -39,6 +36,21 @@
   }
 }
 
+.sidebar__list.sidebar__list--descktop {
+  @media screen and (max-width: v.$tabletWidth) {
+    display: none;
+  }
+}
+
+.sidebar__list.sidebar__list--mobile {
+  @media screen and (max-width: v.$tabletWidth) {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    width: 100%;
+  }
+}
+
 .sidebar__list--decor::before {
   position: absolute;
   content: '';
@@ -48,10 +60,21 @@
   height: 1px;
   width: 89%;
   background: v.$background-light-minor2;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    display: none;
+    height: 0;
+    width: 0;
+    background: transparent;
+  }
 }
 
 .sidebar__list--user {
   margin-left: -12px;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    margin-left: 0;
+  }
 }
 
 .sidebar__item {
@@ -61,24 +84,29 @@
   height: 54px;
   padding: 0 14px;
   border-radius: 10px;
-
   background-color: transparent;
   transition: all 0.3s ease;
   cursor: pointer;
-
-  &:not(:last-of-type) {
-    margin-bottom: 6px;
-  }
 
   &:hover,
   &:focus {
     background-color: v.$background-light-minor2;
     transition: all 0.3s ease;
+
+    @media screen and (max-width: v.$tabletWidth) {
+      background-color: transparent;
+      cursor: auto;
+    }
   }
 
   &:hover .sidebar__link .sidebar__label,
   &:focus .sidebar__link .sidebar__label {
     color: v.$accent2;
+
+    @media screen and (max-width: v.$tabletWidth) {
+      color: v.$text-minor;
+      cursor: auto;
+    }
   }
 
   &:hover .sidebar__link .sidebar__icon svg,
@@ -86,6 +114,26 @@
   &:hover .sidebar__button svg,
   &:focus .sidebar__button svg {
     fill: v.$accent2;
+
+    @media screen and (max-width: v.$tabletWidth) {
+      fill: v.$text-minor;
+      cursor: auto;
+    }
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 6px;
+
+    @media screen and (max-width: v.$tabletWidth) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (max-width: v.$tabletWidth) {
+    cursor: auto;
+    padding: 0;
+    flex: 0 0 25%;
+    height: 100%;
   }
 }
 
@@ -124,6 +172,11 @@
 .sidebar__link {
   flex-grow: 1;
   display: flex;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .sidebar__icon {
@@ -133,7 +186,16 @@
 
   & svg {
     fill: v.$text-minor;
-  }  
+
+    @media screen and (max-width: v.$tabletWidth) {
+      height: 26px;
+    }
+  } 
+  
+  @media screen and (max-width: v.$tabletWidth) {
+    margin-right: 0;
+    margin-bottom: 3px;
+  }
 }
 
 .sidebar__label {
@@ -150,6 +212,10 @@
   & svg {
     margin-bottom: 2px;
   } 
+
+  @media screen and (max-width: v.$tabletWidth) {
+    display: none;
+  }
 }
 
 .sidebar__button--open {

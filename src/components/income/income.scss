@@ -3,6 +3,10 @@
 .income__box {
   height: 100%;
   padding-bottom: 20px;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    height: 250px;
+  }
 }
 
 .income__list {

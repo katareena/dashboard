@@ -27,6 +27,11 @@
     'aria-2 aria-2'
     'aria-3 aria-4';
   }
+
+  @media screen and (max-width: v.$tabletWidth) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .home__title {
