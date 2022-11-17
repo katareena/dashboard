@@ -18,12 +18,13 @@ import { ReactComponent as LinkIcon } from '../../assets/icons/arrow-link-icon.s
 function Home() {
   return (
     <>
-      <h1 className='visually-hidden'>Dashboard: an application for organizing your money routine</h1>
+      <h1 className='visually-hidden'>Dashboard: an application for organizing your money routine</h1>      
       
-      <div className='home__wrap'>
-        <h2 className='home__title'>Dashboard</h2>
+      <div className='home__wrap'>   
 
-        <div className='home__block home__block--grid-aria-2'>
+        <h2 className='home__title'>Dashboard</h2>    
+
+        <div className='home__block home__block--grid-aria-1'>
           <section>
             <div className='home__subtitle-box'>
               <h3 className='home__subtitle'>Overview</h3>
@@ -68,7 +69,7 @@ function Home() {
           </section>
         </div>
 
-        <section className='home__block home__block--grid-aria-3'>
+        <div className='home__block home__block--grid-aria-2'>
           <div className='home__subtitle-box'>
             <h3 className='home__subtitle'>Total Income</h3>
             <Filter />
@@ -77,9 +78,9 @@ function Home() {
           <div className='home__box'>
             <Income />
           </div>          
-        </section>
+        </div>
 
-        <section className='home__block home__block--grid-aria-4'>
+        <div className='home__block home__block--grid-aria-3'>
           <div className='home__subtitle-box'>
             <h3 className='home__subtitle'>Popular Products</h3>
           </div>
@@ -102,15 +103,16 @@ function Home() {
               <LinkIcon />
             </span>           
           </Link>
-        </section>
+        </div>
 
-        <section className='home__block home__block--grid-aria-5'>
+        <div className='home__block home__block--grid-aria-4'>
           <div className='home__subtitle-box'>
             <h3 className='home__subtitle'>Comments</h3>
           </div>
 
           <Comment />
-        </section>
+        </div>
+
       </div>
     </>
   )

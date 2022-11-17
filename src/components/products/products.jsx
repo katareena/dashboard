@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-function Products () {
+function Products() {
   return (
     <div>Products</div>
   )

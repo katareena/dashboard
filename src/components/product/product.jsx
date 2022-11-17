@@ -1,7 +1,7 @@
 import React from 'react';
 import './product.scss';
 
-function Product({title, icon, discription, price}) {
+function Product({title, icon, description, price}) {
   return (
     <li className='product' key={title}>
       <div className='product__pic'>
@@ -9,7 +9,7 @@ function Product({title, icon, discription, price}) {
       </div>
       <div className='product__box'>
         <span className='product__title'>{title}</span>
-        <span className='product__discription'>{discription}</span>
+        <span className='product__description'>{description}</span>
       </div>
       <div className='product__price'>{price}</div>
     </li>

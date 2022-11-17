@@ -9,15 +9,6 @@ function Filter() {
   const [sortingValue, setSortingValue] = useState('All Time');
   const [selected, setSelected] = useState(null);
 
-  // function handleOpen(index) {
-  //   console.log('toggle Section');
-  //   if (selected === index) {
-  //     return setSelected(null);
-  //   }
-
-  //   setSelected(index);
-  // };
-
   return (
     <form className='filter' action='#' method='get'>
       <div className='filter__inner'>        

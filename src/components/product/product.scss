@@ -14,10 +14,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: v.$background-light-minor2;
   border-radius: 10px;
-
   margin-right: 15px;
 }
 
@@ -35,7 +33,7 @@
   color: v.$text-minor;
 }
 
-.product__discription {
+.product__description {
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
@@ -47,6 +45,5 @@
   font-size: 18px;
   line-height: 22px;
   color: v.$accent2;
-
   margin-left: auto;
 }
