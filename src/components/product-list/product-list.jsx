@@ -16,7 +16,7 @@ function ProductList() {
         <h3>Popular Products</h3>
       </Subtitle>      
 
-      <ul>
+      <ul className='product-list__list'>
         {products.map(({ title, icon, description, price }) => (
           <Product
             title={title}

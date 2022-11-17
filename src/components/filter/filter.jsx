@@ -18,7 +18,7 @@ function Filter() {
           aria-label='the filter is active'
           onClick={() => setSortingValue('All Time')}
         >
-          {sortingValue !== 'All Time' && <FilterIcon />}            
+          {sortingValue == 'All Time' && <FilterIcon />}            
         </button>
 
         <button

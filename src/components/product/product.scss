@@ -23,7 +23,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 10px 0;
 }
 
 .product__title {
@@ -43,6 +44,7 @@
 .product__price {
   font-weight: 500;
   font-size: 18px;
+  letter-spacing: -0.2px;
   line-height: 22px;
   color: v.$accent2;
   margin-left: auto;

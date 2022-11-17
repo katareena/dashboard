@@ -1,3 +1,5 @@
+@use '../../global-styles/variables' as v;
+
 .income__box {
   height: 100%;
 }
@@ -26,4 +28,8 @@
 
 .income__col-label {
   text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: v.$text-minor;
 }

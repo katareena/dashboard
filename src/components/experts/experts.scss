@@ -2,11 +2,13 @@
 
 .experts__wrap {
   display: flex;
-  margin-top: 10px;
+  justify-content: space-between;
+  margin-right: -10px;
 }
 
 .experts__item {
   display: flex;
+  max-width: 190px;
 }
 
 .experts__img {
