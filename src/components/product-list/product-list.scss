@@ -8,15 +8,15 @@
 }
 
 .product-list__link {
-  font-weight: 400;
-  font-size: 16px;
-  color: v.$accent2;
-
   display: flex;
   min-height: 66px;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
+
+  font-weight: 400;
+  font-size: 16px;
+  color: v.$accent2;
 
   & span {
     margin-bottom: -10px;
@@ -30,7 +30,6 @@
   &:hover .product-list__link-icon svg,
   &:focus .product-list__link-icon svg {
     fill: v.$accent1;
-    transition: all 0.3s ease;
   }
 
   @media screen and (max-width: v.$tabletWidth) {
@@ -52,6 +51,5 @@
 
 .product-list__link-icon svg {
   fill: v.$accent2;
-  transition: all 0.3s ease;
   margin-bottom: -1px;
 }

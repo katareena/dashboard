@@ -29,6 +29,10 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    height: -webkit-fill-available;
+  }
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -49,8 +53,13 @@ img {
 }
 
 a {
-  transition: all 0.3s ease;
+  transition: v.$transition;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    transition: v.$transition;
+  }
 
   @media screen and (max-width: v.$tabletWidth) {
     cursor: auto;
@@ -58,17 +67,34 @@ a {
 }
 
 button {
-  transition: all 0.3s ease;
+  font-family: 'Work Sans', 'Tahoma', sans-serif;
+  transition: v.$transition;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    transition: v.$transition;
+  }
 
   @media screen and (max-width: v.$tabletWidth) {
     cursor: auto;
   }
 }
 
+svg {
+  fill: v.$text-minor;
+  transition: v.$transition;
+
+  &:hover,
+  &:focus {
+    transition: v.$transition;
+  }
+}
+
 input {
   font-family: 'Work Sans', 'Tahoma', sans-serif;
-  transition: all 0.3s ease;
+  transition: v.$transition;
+  padding: 0;
 }
 
 input::-webkit-outer-spin-button,
@@ -78,8 +104,4 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
-}
-
-svg {
-  fill: v.$text-minor;
 }

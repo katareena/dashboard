@@ -13,9 +13,24 @@
 .experts__item {
   display: flex;
   max-width: 190px;
+  height: 100%;
+  cursor: pointer;
+  transform: scale(1);
+
+  &:hover .experts__img,
+  &:focus .experts__img {
+    transform: scale(1.1);
+    transition: v.$transition;
+  }
 
   @media screen and (max-width: v.$tabletWidth) {
     flex-direction: column;
+
+    &:hover .experts__img,
+    &:focus .experts__img {
+      transform: scale(1);
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -25,6 +40,7 @@
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
+  transition: v.$transition;
 
   @media screen and (max-width: v.$tabletWidth) {
     margin-bottom: 10px;

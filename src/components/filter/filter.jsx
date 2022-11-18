@@ -27,8 +27,10 @@ function Filter() {
           aria-label='toggle filter'
           onClick={() => setIsOpen(!isOpen)}
         >
-          <span>{sortingValue}</span>
-          <ArrowIcon />
+          <span className='filter__toggle-text'>{sortingValue}</span>
+          <span className='filter__toggle-icon'>
+            <ArrowIcon />
+          </span>          
         </button>
 
       </div>

@@ -2,7 +2,7 @@
 
 .main-page {
   display: grid;
-  grid-template-columns: minmax(240px, 23.33%) 76.67%;
+  grid-template-columns: minmax(239px, 23.33%) 76.67%;
   height: 100vh;
 
   @media screen and (min-width: v.$maxWidth) {
@@ -10,7 +10,7 @@
   }
 
   @media screen and (max-width: v.$desktopWidth) {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 239px 1fr;
   }
 
   @media screen and (max-width: v.$tabletWidth) {
@@ -38,5 +38,5 @@
 }
 
 .main-page__main {
-  padding: 25px 20px 20px 20px;
+  padding: 25px 20px 15px 20px;
 }

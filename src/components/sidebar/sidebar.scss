@@ -84,13 +84,13 @@
   padding: 0 14px;
   border-radius: 10px;
   background-color: transparent;
-  transition: all 0.3s ease;
+  transition: v.$transition;
   cursor: pointer;
 
   &:hover,
   &:focus {
     background-color: v.$background-light-minor2;
-    transition: all 0.3s ease;
+    transition: v.$transition;
 
     @media screen and (max-width: v.$tabletWidth) {
       background-color: transparent;
@@ -192,7 +192,7 @@
   width: 25px;
   height: 25px;
   font-size: 0;
-  margin-right: 6%;
+  margin-right: 7%;
   
   & svg {
     fill: v.$text-minor;    
@@ -234,7 +234,6 @@
 .sidebar__button {
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
 
   & svg {
     margin-bottom: 2px;
@@ -247,5 +246,4 @@
 
 .sidebar__button--open {
   transform: rotate(180deg);
-  transition: all 0.3s ease;
 }
