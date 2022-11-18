@@ -7,12 +7,12 @@ import Sidebar from '../../components/sidebar/sidebar';
 import { Outlet } from 'react-router-dom';
 
 function MainPage() {
-  const [width, height] = useWindowSize();
+  const [ , height] = useWindowSize();
   // const height = use100vh();
-  const contetntHeight = width < 576 ? height - '60' : height;
+  // const contetntHeight = width < 576 ? height - '60' : height;
 
   return (
-    <div className='main-page' style={{height: contetntHeight}}>
+    <div className='main-page' style={{height: height}}>
       <Sidebar></Sidebar>
       
       <div className='main-page__inner'>
