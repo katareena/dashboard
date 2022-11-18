@@ -16,8 +16,8 @@
   @media screen and (max-width: v.$tabletWidth) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 65px;
-    height: 100vh;
     overflow: hidden;
+    height: -webkit-fill-available;
 
     grid-template-areas: 
       'content'
