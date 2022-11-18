@@ -2,7 +2,7 @@
 
 ### 🏠 [Homepage](https://github.com/katareena/dashboard)
 
-### ✨ [Demo](https://dashboard-ten-ecru.vercel.app/)
+### ✨ [Demo](https://dashboard-katareena.vercel.app)
 
 ## Prerequisites
 - node >= 16.13.0
