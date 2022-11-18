@@ -32,6 +32,18 @@
     fill: v.$accent1;
     transition: all 0.3s ease;
   }
+
+  @media screen and (max-width: v.$tabletWidth) {
+    &:hover,
+    &:focus {
+      color: v.$accent2;
+    }
+
+    &:hover .product-list__link-icon svg,
+    &:focus .product-list__link-icon svg {
+      fill: v.$accent2;
+    }
+  }
 }
 
 .product-list__link-text {

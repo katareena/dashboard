@@ -3,6 +3,7 @@
 .main-page {
   display: grid;
   grid-template-columns: minmax(240px, 23.33%) 76.67%;
+  height: 100vh;
 
   @media screen and (min-width: v.$maxWidth) {
     grid-template-columns: minmax(min-content, 336px) 1fr;
@@ -14,7 +15,7 @@
 
   @media screen and (max-width: v.$tabletWidth) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 72px;
+    grid-template-rows: 1fr 65px;
     height: 100vh;
     overflow: hidden;
 
@@ -27,15 +28,15 @@
 .main-page__inner {
   display: flex;
   flex-direction: column;
+  background-color: v.$background-light-minor1;
 
   @media screen and (max-width: v.$tabletWidth) {
     grid-area: content;
-    height: calc(100vh - 72px);
+    height: calc(100vh - 65px);
     overflow: scroll;
   }
 }
 
 .main-page__main {
   padding: 25px 20px 20px 20px;
-  background-color: v.$background-light-minor1;
 }

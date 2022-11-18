@@ -168,7 +168,7 @@ const mobileLinksArray = [
   },
   {
     label: 'Other',
-    icon: <LogoutIcon />,
+    icon: <CustomersIcon />,
     to: '/',
   },
 ];

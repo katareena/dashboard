@@ -3,9 +3,6 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding-left: 26px;
-  padding-right: 26px;
-
   padding-left: 7.97%;
   padding-right: 7.97%;
 
@@ -43,6 +40,8 @@
 }
 
 .sidebar__list.sidebar__list--mobile {
+  display: none;
+
   @media screen and (max-width: v.$tabletWidth) {
     padding-top: 0;
     padding-bottom: 0;
@@ -138,9 +137,18 @@
 }
 
 .sidebar__label {
+  font-weight: 500;
+  color: v.$text-minor;
+  margin-top: 1px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+  }
 }
 
 .sidebar__item-content {
@@ -181,14 +189,17 @@
 
 .sidebar__icon {
   display: block;
+  width: 25px;
+  height: 25px;
   font-size: 0;
   margin-right: 6%;
-
+  
   & svg {
-    fill: v.$text-minor;
+    fill: v.$text-minor;    
 
     @media screen and (max-width: v.$tabletWidth) {
       height: 26px;
+      transform: scale(0.8);
     }
   } 
   
@@ -198,10 +209,26 @@
   }
 }
 
-.sidebar__label {
-  font-weight: 500;
-  color: v.$text-minor;
-  margin-top: 1px;
+.sidebar__icon--more {
+  position: relative;
+
+  &::before{
+    position: absolute;
+    content: '';
+    // color: v.$text-minor;
+    width: 21px;
+    height: 21px;
+    background-color: transparent;
+    border: solid 2px v.$text-minor;
+    top: 1px;
+    left: 2px;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    color: v.$text-minor;
+  }
 }
 
 .sidebar__button {
