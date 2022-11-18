@@ -3,6 +3,7 @@
 .filter {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   position: relative;
 }
 
@@ -34,7 +35,6 @@
 .filter__toggle {
   display: flex;
   align-items: center;
-  // margin-bottom: 5px;
   padding-right: 5px;
 
   font-weight: 400;
@@ -56,14 +56,12 @@
   }
 
   @media screen and (max-width: v.$tabletWidth) {
-    &:hover,
-    &:focus {
-      color: v.$text-accent;
+    &:hover {
+      color: v.$accent2;
     }
-  
-    &:hover svg,
-    &:focus svg {
-      fill: v.$text-accent;
+
+    &:hover .filter__toggle-icon svg {
+      fill: v.$accent2;
     }
   }
 }
@@ -76,6 +74,7 @@
 .filter__toggle-text {
   margin-bottom: 4px;
   letter-spacing: -0.7px;
+  white-space: nowrap;
 }
 
 .filter__toggle--open .filter__toggle-icon svg {
