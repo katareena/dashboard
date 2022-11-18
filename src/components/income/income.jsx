@@ -1,11 +1,15 @@
 import React from 'react';
+import { useWindowSize } from '../../hooks/use-window-size';
 import './income.scss';
 import { translateHeight } from '../../utils/translate-height';
 import { setColor } from '../../utils/set-color';
 import Filter from '../filter/filter';
 import Subtitle from '../subtitle/subtitle';
 
-function Income() {
+function Income({incomes}) {
+  const [width, ] = useWindowSize();
+  const customIncomes = width < 576 ? incomes.slice(0, 6) : incomes;
+
   return (
     <>
       <Subtitle>
@@ -15,7 +19,7 @@ function Income() {
 
       <div className='income__box'>
         <ul className='income__list'>
-          {incoms.map(({ value, month }, i) => (
+          {customIncomes.map(({ value, month }, i) => (
             <li className='income__item' key={`${month}-${i}`}>
               <span
                 className='income__col'
@@ -30,56 +34,5 @@ function Income() {
     </> 
   )
 }
-
-const incoms = [
-  {
-    value: 0.30,
-    month: 'Jan',
-  },
-  {
-    value: 0.45,
-    month: 'Feb',
-  },
-  {
-    value: 0.40,
-    month: 'Mar',
-  },
-  {
-    value: 0.20,
-    month: 'Apr',
-  },
-  {
-    value: 1.00,
-    month: 'May',
-  },
-  {
-    value: 0.25,
-    month: 'Jun',
-  },
-  {
-    value: 0.20,
-    month: 'Jul',
-  },
-  {
-    value: 0.70,
-    month: 'Aug',
-  },
-  {
-    value: 0.35,
-    month: 'Sep',
-  },
-  {
-    value: 0.20,
-    month: 'Nov',
-  },
-  {
-    value: 0.20,
-    month: 'Dec',
-  },
-  {
-    value: 0.20,
-    month: 'Jan',
-  },
-];
 
 export default Income;
