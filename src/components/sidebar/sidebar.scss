@@ -209,28 +209,6 @@
   }
 }
 
-.sidebar__icon--more {
-  position: relative;
-
-  &::before{
-    position: absolute;
-    content: '';
-    // color: v.$text-minor;
-    width: 21px;
-    height: 21px;
-    background-color: transparent;
-    border: solid 2px v.$text-minor;
-    top: 1px;
-    left: 2px;
-  }
-
-  &::after {
-    position: absolute;
-    content: '';
-    color: v.$text-minor;
-  }
-}
-
 .sidebar__button {
   display: flex;
   align-items: center;
