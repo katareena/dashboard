@@ -10,7 +10,7 @@ function MainPage() {
   const contetntHeight = height - '60px';
 
   return (
-    <div className='main-page' style={{contetntHeight}}>
+    <div className='main-page' style={{height: contetntHeight}}>
       <Sidebar></Sidebar>
       
       <div className='main-page__inner'>
