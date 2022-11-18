@@ -33,21 +33,11 @@
   }
 }
 
-.sidebar__list.sidebar__list--descktop {
-  @media screen and (max-width: v.$tabletWidth) {
-    display: none;
-  }
-}
-
 .sidebar__list.sidebar__list--mobile {
-  display: none;
-
-  @media screen and (max-width: v.$tabletWidth) {
-    padding-top: 0;
-    padding-bottom: 0;
-    display: flex;
-    width: 100%;
-  }
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  width: 100%;
 }
 
 .sidebar__list--decor::before {

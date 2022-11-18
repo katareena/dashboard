@@ -3,12 +3,9 @@ import { Link } from 'react-router-dom';
 import './user-nav.scss';
 import { ReactComponent as NotificationsIcon } from '../../assets/icons/notifications-icon.svg';
 import { ReactComponent as EditIcon } from '../../assets/icons/edit-icon.svg';
-import userAvatar from '../../assets/user-avatar.png';
 import cn from 'classnames';
-import { AuthorizationStatus } from '../../constants/constants';
 
-
-function UserNav() {
+function UserNav({user, notifications}) {
   const isNotifications = notifications.length !== 0;
 
   return (
@@ -27,11 +24,11 @@ function UserNav() {
         <Link className='user-nav__link' to='/profile' aria-label='go to your personal profile'>
           <img
             className='user-nav__avatar'
-            src={userData.avatar}
-            alt={userData.name}
+            src={user.avatar}
+            alt={user.name}
             width='54'
             height='54'
-            aria-label={`avatar of ${userData.name}`}
+            aria-label={`avatar of ${user.name}`}
           >
           </img>
         </Link>
@@ -39,14 +36,5 @@ function UserNav() {
     </ul>
   )
 }
-
-const userData = {
-  name: 'John',
-  email: 'example@gmail.com',
-  authStatus: AuthorizationStatus.Auth,
-  avatar: userAvatar,
-}
-
-const notifications = ['Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.', 'Lorem, ipsum dolor.']
 
 export default UserNav;

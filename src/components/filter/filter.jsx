@@ -3,6 +3,7 @@ import './filter.scss';
 import cn from 'classnames';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow-icon.svg';
 import { ReactComponent as FilterIcon } from '../../assets/icons/filter-icon.svg';
+import { sortingValues } from '../../constants/constants';
 
 function Filter() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,5 @@ function Filter() {
     </form>
   )
 }
-
-const sortingValues = ['All Time', 'Lorem', 'Merol'];
 
 export default Filter;

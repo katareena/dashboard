@@ -7,7 +7,7 @@ import Income from '../income/income';
 import ProductList from '../product-list/product-list';
 import Comments from '../comments/comments';
 
-function Home() {
+function Home({incomes, products, experts}) {
   return (
     <>
       <h1 className='visually-hidden'>Dashboard: an application for organizing your money routine</h1>      
@@ -17,7 +17,7 @@ function Home() {
 
         <div className='home__block home__block--grid-aria-1'>
           <Overview />
-          <Experts />
+          <Experts experts={experts}/>
         </div>
 
         <div className='home__block home__block--grid-aria-2'>
@@ -25,7 +25,7 @@ function Home() {
         </div>
 
         <div className='home__block home__block--grid-aria-3'>
-          <ProductList />
+          <ProductList products={products}/>
         </div>
 
         <div className='home__block home__block--grid-aria-4'>
@@ -35,56 +35,5 @@ function Home() {
     </>
   )
 }
-
-const incomes = [
-  {
-    value: 0.30,
-    month: 'Jan',
-  },
-  {
-    value: 0.45,
-    month: 'Feb',
-  },
-  {
-    value: 0.40,
-    month: 'Mar',
-  },
-  {
-    value: 0.20,
-    month: 'Apr',
-  },
-  {
-    value: 1.00,
-    month: 'May',
-  },
-  {
-    value: 0.25,
-    month: 'Jun',
-  },
-  {
-    value: 0.20,
-    month: 'Jul',
-  },
-  {
-    value: 0.70,
-    month: 'Aug',
-  },
-  {
-    value: 0.35,
-    month: 'Sep',
-  },
-  {
-    value: 0.20,
-    month: 'Nov',
-  },
-  {
-    value: 0.20,
-    month: 'Dec',
-  },
-  {
-    value: 0.20,
-    month: 'Jan',
-  },
-];
 
 export default Home;

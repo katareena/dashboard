@@ -3,13 +3,15 @@ import './header.scss';
 import SearchForm from '../search-form/search-form';
 import UserNav from '../user-nav/user-nav';
 
-
-function Header () {
+function Header({user, notifications}) {
   return (
     <header className='header'>
       <div className='header__wrap'>
         <SearchForm />
-        <UserNav />
+        <UserNav 
+          user={user}
+          notifications={notifications}
+        />
       </div>
     </header>
   )
