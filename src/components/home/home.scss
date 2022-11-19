@@ -54,6 +54,10 @@
     height: 40px;
     line-height: 40px;
   }
+
+  @media screen and (max-width: v.$mobileWidth) {
+    display: none;
+  }
 } 
 
 .home__block {

@@ -5,24 +5,31 @@
   margin-left: 40px;
 
   @media screen and (max-width: v.$mobileWidth) {
-    margin-left: 10px;
-  }
-}
-
-.user-nav__item {
-  @media screen and (max-width: v.$mobileWidth) {
-    display: none;
-  }
-}
-
-.user-nav__item.user-nav__item--avatar {
-  @media screen and (max-width: v.$mobileWidth) {
-    display: block;
+    margin-left: 0;
+    width: 100%;
   }
 }
 
 .user-nav__item--avatar {
   margin-left: 10px;
+
+  @media screen and (max-width: v.$mobileWidth) {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.user-nav__avatar-name {
+  @media screen and (max-width: v.$mobileWidth) {
+    height: 40px;
+    line-height: 40px;
+    font-size: 35px;
+    font-weight: 500;  
+    letter-spacing: -2.5px;
+
+    margin-left: 15px;
+    margin-right: 5px;
+  }
 }
 
 .user-nav__item--notifications {
@@ -54,6 +61,28 @@
   }
 }
 
+.user-nav__link.user-nav__link--avatar {
+  @media screen and (max-width: v.$mobileWidth) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+.user-nav__link--avatar .user-nav__avatar-icon {
+  @media screen and (max-width: v.$mobileWidth) {
+    transform: rotate(-90deg);
+    color: v.$text-major;
+    text-align: center;
+    padding-right: 4px;
+
+    & svg {
+      fill: v.$text-major;
+    }
+  }
+}
+
 .user-nav__avatar {
   display: block;
   width: 54px;
@@ -74,5 +103,10 @@
     left: 0;
     right: 0;
     text-align: center;    
+  }
+
+  @media screen and (max-width: v.$mobileWidth) {
+    width: 44px;
+    height: 44px;
   }
 }
