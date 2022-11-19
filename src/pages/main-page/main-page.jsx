@@ -6,7 +6,7 @@ import { breakpointWidth, sidebarMobileHeight } from '../../constants/constants'
 import Header from '../../components/header/header';
 import Sidebar from '../../components/sidebar/sidebar';
 
-function MainPage({sidebarMainData, sidebarUserData, sidebarMobileData, user, notifications}) {
+function MainPage({sidebarMainData, sidebarMobileData, user, notifications}) {
   const [width, height] = useWindowSize();
   const contetntHeight = width < breakpointWidth.tablet && height - sidebarMobileHeight;
 
@@ -14,7 +14,6 @@ function MainPage({sidebarMainData, sidebarUserData, sidebarMobileData, user, no
     <div className='main-page' style={{height: height}}>
       <Sidebar
         sidebarMainData={sidebarMainData}
-        sidebarUserData={sidebarUserData}
         sidebarMobileData={sidebarMobileData}
       />
       

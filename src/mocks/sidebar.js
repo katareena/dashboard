@@ -25,44 +25,41 @@ export const sidebarMainData = [
   {
     label: 'Customers',
     icon: <CustomersIcon />,
-    to: '/customers',
+    to: AppRoute.Customers,
     button: true,
   },
   {
     label: 'Shop',
     icon: <ShopIcon />,
-    to: '/shop',
+    to: AppRoute.Shop,
     button: true,
   },
   {
     label: 'Income',
     icon: <IncomeIcon />,
-    to: '/income',
+    to: AppRoute.Income,
     button: true,
   },
   {
     label: 'Promotes',
     icon: <PromotesIcon />,
-    to: '/promotes',
+    to: AppRoute.Promotes,
     button: true,
   },
-];
-
-export const sidebarUserData = [
   {
     label: 'Settings',
     icon: <SettingsIcon />,
-    to: '/settings',
+    to: AppRoute.Settings,
   },
   {
     label: 'Help & Getting Started',
     icon: <HelpdeskIcon />,
-    to: '/helpdesk',
+    to: AppRoute.Help,
   },
   {
     label: 'Log Out',
     icon: <LogoutIcon />,
-    to: '/',
+    to: AppRoute.Logout,
   },
 ];
 
@@ -81,11 +78,11 @@ export const sidebarMobileData = [
   {
     label: 'Help Desk',
     icon: <HelpdeskIcon />,
-    to: '/helpdesk',
+    to: AppRoute.Help,
   },
   {
     label: 'Other',
     icon: <CustomersIcon />,
-    to: '/other',
+    to: AppRoute.Other,
   },
 ];

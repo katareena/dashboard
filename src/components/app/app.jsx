@@ -5,7 +5,7 @@ import MainPage from '../../pages/main-page/main-page';
 import Home from '../home/home';
 import Products from '../products/products';
 import NotFoundPage from '../../pages/not-found-page/not-found-page';
-import { sidebarMainData, sidebarUserData, sidebarMobileData } from '../../mocks/sidebar';
+import { sidebarMainData, sidebarMobileData } from '../../mocks/sidebar';
 import { incomes } from '../../mocks/incomes';
 import { products } from '../../mocks/products';
 import { experts } from '../../mocks/experts';
@@ -19,7 +19,6 @@ function App() {
         <Route path={AppRoute.Root} element={
           <MainPage
             sidebarMainData={sidebarMainData}
-            sidebarUserData={sidebarUserData}
             sidebarMobileData={sidebarMobileData}
             user={user}
             notifications={notifications}
@@ -30,7 +29,18 @@ function App() {
               products={products}
               experts={experts}
           /> } />
+
           <Route path={AppRoute.Products} element={<Products /> } />
+          <Route path={AppRoute.Customers} element={<div>Customers</div>} />
+          <Route path={AppRoute.Shop} element={<div>Shop</div>} />
+          <Route path={AppRoute.Income} element={<div>Income</div>} />
+          <Route path={AppRoute.Promotes} element={<div>Promotes</div>} />
+
+          <Route path={AppRoute.Settings} element={<div>Settings</div>} />
+          <Route path={AppRoute.Help} element={<div>Help</div>} />
+          <Route path={AppRoute.Logout} element={<div>Logout</div>} />
+
+          <Route path={AppRoute.Other} element={<div>Other</div>} />
         </Route>
 
         <Route path={AppRoute.NoFoundPage} element={<NotFoundPage />} />

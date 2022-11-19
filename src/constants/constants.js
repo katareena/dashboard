@@ -1,6 +1,14 @@
 export const AppRoute = {
   Root: '/',
   Products: 'products',
+  Customers: 'customers',
+  Shop: 'shop',
+  Income: 'income',
+  Promotes: 'promotes',
+  Settings: 'settings',
+  Help: 'help',
+  Logout: 'logout',
+  Other: 'other',
   NoFoundPage: '*',
 }
 

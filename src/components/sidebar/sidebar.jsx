@@ -7,18 +7,24 @@ import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow-icon.svg';
 import './sidebar.scss';
 import cn from 'classnames';
 
-function Sidebar({sidebarMainData, sidebarUserData, sidebarMobileData}) {
-  const [selected, setSelected] = useState(null);
+function Sidebar({sidebarMainData, sidebarMobileData}) {
+  const [opened, setOpened] = useState(null);
+  const [selected, setSelected] = useState('Home');
   const [width, ] = useWindowSize();
 
+  const sidebarAppNav = sidebarMainData.slice(0, sidebarMainData.length - 3);
+  const sidebarUserNav = sidebarMainData.slice(-3);
+
   function handleOpenSection(index) {
-    console.log('toggle Section');
-    
-    if (selected === index) {
-      return setSelected(null);
+    if (opened === index) {
+      return setOpened(null);
     }
 
-    setSelected(index);
+    return setOpened(index);
+  };  
+
+  function handleSelectSection(label) {
+    return selected !== label && setSelected(label);
   };
 
   return (
@@ -28,19 +34,23 @@ function Sidebar({sidebarMainData, sidebarUserData, sidebarMobileData}) {
       { width >= breakpointWidth.tablet && (
         <>
           <ul className='sidebar__list sidebar__list--grow'>
-            {sidebarMainData.map(({ icon, label, to}, index) => (
+            {sidebarAppNav.map(({ icon, label, to}, index) => (
               <li
-                className={cn('sidebar__item', {'sidebar__item--open': selected === index})}
+                className={cn('sidebar__item', {'sidebar__item--opened': opened === index, 'sidebar__item--selected' : selected === label})}
                 key={label}
               >
                 <div className='sidebar__item-inner'>
-                  <Link className='sidebar__link' to={to}>
+                  <Link
+                    className='sidebar__link'
+                    to={to}
+                    onClick={() => handleSelectSection(label)}
+                  >
                     <span className='sidebar__icon'>{icon}</span>
                     <span className='sidebar__label'>{label}</span>
                   </Link>
                   
                   <button
-                    className={cn('sidebar__button', {'sidebar__button--open': selected === index})}
+                    className='sidebar__button'
                     type='button'
                     aria-label={`open a section ${label}`}
                     onClick={() => handleOpenSection(index)}
@@ -59,10 +69,16 @@ function Sidebar({sidebarMainData, sidebarUserData, sidebarMobileData}) {
           </ul> 
     
           <ul className='sidebar__list sidebar__list--decor sidebar__list--user'>
-            {sidebarUserData.map(({ icon, label, to }) => (
-              <li className='sidebar__item' key={label}>
+            {sidebarUserNav.map(({ icon, label, to }) => (
+              <li
+              className={cn('sidebar__item', {'sidebar__item--selected' : selected === label})}
+                key={label}>
                 <div className='sidebar__item-inner'>
-                  <Link className='sidebar__link' to={to}>
+                  <Link
+                    className='sidebar__link'
+                    to={to}
+                    onClick={() => handleSelectSection(label)}
+                  >
                     <span className='sidebar__icon'>{icon}</span>
                     <span className='sidebar__label'>{label}</span>
                   </Link>
@@ -76,9 +92,12 @@ function Sidebar({sidebarMainData, sidebarUserData, sidebarMobileData}) {
       { width < breakpointWidth.tablet && (
         <ul className='sidebar__list sidebar__list--mobile'>
           {sidebarMobileData.map(({ icon, label, to }) => (
-            <li className='sidebar__item' key={label}>
+            <li              
+              className={cn('sidebar__item', {'sidebar__item--selected' : selected === label})}
+              key={label}
+            >
               <div className='sidebar__item-inner'>
-                <Link className='sidebar__link' to={to}>
+                <Link className='sidebar__link' to={to} onClick={() => handleSelectSection(label)}>
                   <span className='sidebar__icon'>{icon}</span>
                   <span className='sidebar__label'>{label}</span>
                 </Link>

@@ -75,40 +75,6 @@
   border-radius: 10px;
   background-color: transparent;
   transition: v.$transition;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    background-color: v.$background-light-minor2;
-    transition: v.$transition;
-
-    @media screen and (max-width: v.$tabletWidth) {
-      background-color: transparent;
-      cursor: auto;
-    }
-  }
-
-  &:hover .sidebar__link .sidebar__label,
-  &:focus .sidebar__link .sidebar__label {
-    color: v.$accent2;
-
-    @media screen and (max-width: v.$tabletWidth) {
-      color: v.$text-minor;
-      cursor: auto;
-    }
-  }
-
-  &:hover .sidebar__link .sidebar__icon svg,
-  &:focus .sidebar__link .sidebar__icon svg,
-  &:hover .sidebar__button svg,
-  &:focus .sidebar__button svg {
-    fill: v.$accent2;
-
-    @media screen and (max-width: v.$tabletWidth) {
-      fill: v.$text-minor;
-      cursor: auto;
-    }
-  }
 
   &:not(:last-of-type) {
     margin-bottom: 6px;
@@ -153,14 +119,6 @@
   }
 }
 
-.sidebar__item--open {
-  height: min-content;
-
-  & .sidebar__item-content {
-    display: block;
-  }
-}
-
 .sidebar__item-inner {
   display: flex;
   align-items: center;
@@ -170,6 +128,8 @@
 .sidebar__link {
   flex-grow: 1;
   display: flex;
+  height: 100%;
+  align-items: center;
 
   @media screen and (max-width: v.$tabletWidth) {
     flex-direction: column;
@@ -212,6 +172,68 @@
   }
 }
 
-.sidebar__button--open {
-  transform: rotate(180deg);
+// selected section & NOT opened section
+.sidebar__item--selected {
+  background-color: v.$background-light-minor2;
+  color: v.$accent2;
+
+  & .sidebar__icon svg,
+  & .sidebar__label,
+  & .sidebar__button svg {
+    fill: v.$accent2;
+    color: v.$accent2;
+  }
+
+  & .sidebar__button {
+    transform: rotate(-90deg) translateY(0);
+  }
+
+  @media screen and (max-width: v.$tabletWidth) {
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+// NOT selected section & opened section
+.sidebar__item--opened {
+  height: min-content;
+
+  & .sidebar__item-content {
+    display: block;
+  }
+
+  & .sidebar__button {
+    transform: rotate(-180deg);
+  }
+}
+
+// selected section & opened section
+.sidebar__item--selected.sidebar__item--opened {
+  & .sidebar__button {
+    transform: rotate(-180deg) translateY(0px);
+  }
+}
+
+// hover&focus
+.sidebar__item {
+  @media screen and (min-width: v.$tabletWidth) {
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      transition: v.$transition;
+    }
+
+    &:hover .sidebar__link .sidebar__label,
+    &:focus .sidebar__link .sidebar__label {
+      color: v.$accent2;
+    }
+
+    &:hover .sidebar__link .sidebar__icon svg,
+    &:focus .sidebar__link .sidebar__icon svg,
+    &:hover .sidebar__button svg,
+    &:focus .sidebar__button svg {
+      fill: v.$accent2;
+    }
+  }
 }
