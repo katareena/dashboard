@@ -122,5 +122,10 @@
   @media screen and (max-width: v.$mobileWidth) {
     width: 44px;
     height: 44px;
+
+    &:hover svg,
+    &:focus svg {
+      stroke: v.$white;
+    }
   }
 }
