@@ -1,0 +1,34 @@
+@use '../../global-styles/variables' as v;
+@use '../../global-styles/mixins' as m;
+
+.booklist__wrap {
+  max-width: 1064px;
+  margin: 0 auto;
+};
+
+.booklist__title h2 {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  font-weight: 500;  
+  letter-spacing: -2.5px;
+  @include m.adaptiv-font(50, 40);
+};
+
+.booklist__content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(205px, 1fr));
+  gap: 25px;
+
+  @media screen and (max-width: v.$desktopWidth) {
+    grid-template-columns: repeat(2, minmax(205px, 1fr));
+  }
+
+  @media screen and (max-width: v.$tabletWidth) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: v.$mobileWidth) {
+    grid-template-columns: 1fr;
+  }
+};

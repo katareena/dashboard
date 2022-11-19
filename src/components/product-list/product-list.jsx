@@ -24,7 +24,7 @@ function ProductList({products}) {
         ))}
       </ul>
 
-      <Link className='product-list__link' to='/all-products'>
+      <Link className='product-list__link' to={'/all-products'}>
         <span className='product-list__link-text'>All Products</span>
         <span className='product-list__link-icon'>
           <LinkIcon />

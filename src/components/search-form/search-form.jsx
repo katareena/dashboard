@@ -1,16 +1,32 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useGlobalContext } from '../../context';
+import './search-form.scss';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search-icon.svg';
 import { ReactComponent as AddIcon } from '../../assets/icons/plus-icon.svg';
-import './search-form.scss';
+import { AppRoute } from '../../constants/constants';
 
 function SearchForm() {
-  const searchText = useRef(null);
-  useEffect(() => searchText.current?.focus(), []);
+  const {setSearchTerm, setResultTitle} = useGlobalContext();
+  const [inputText, setInputText] = useState('');
+  const navigate = useNavigate();
+  
+  // set focus
+  const input = useRef(null);
+  useEffect(() => input.current?.focus(), []);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    let tempSearchTerm = inputText.trim();
 
-    console.log('Searching...');
+    if((tempSearchTerm.replace(/[^\w\s]/gi,'')).length === 0){
+      setSearchTerm('the lost world');
+      setResultTitle('Please Enter Something ...');
+    } else {
+      setSearchTerm(inputText);
+    }
+
+    navigate(AppRoute.Products);
   };
 
   return (
@@ -26,6 +42,7 @@ function SearchForm() {
           className='search__button'
           type='submit'
           aria-label='search by your products'
+          onClick={handleSubmit}
         >
           <SearchIcon />
         </button>
@@ -38,7 +55,9 @@ function SearchForm() {
             autoComplete='off'
             minLength='2'
             placeholder='Search'
-            ref={searchText}
+            ref={input}
+            value={inputText}
+            onChange={(evt)=>setInputText(evt.target.value)}
           />
         </div>
       </div>

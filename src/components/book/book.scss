@@ -1,0 +1,34 @@
+@use '../../global-styles/variables' as v;
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  background-color: v.$background-light-primary;
+  transition: v.$transition;
+
+  &:hover {
+    box-shadow: v.$box-shadow1;
+    transition: v.$transition;
+    cursor: pointer;
+  }
+};
+
+.book-item-img img {
+  display: block;
+  max-width: 120px;
+  margin: 0 auto;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    max-width: 180px;
+  }
+};
+
+// .book-item-info {};
+
+// .book-item-info-item {};
+
+// .text-capitalize {};
