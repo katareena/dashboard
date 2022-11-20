@@ -6,6 +6,7 @@
 
   @media screen and (max-width: v.$tabletWidth) {
     z-index: 1;
+    grid-area: menu;
   }  
 }
 
@@ -17,12 +18,9 @@
   height: 100%;
 
   @media screen and (max-width: v.$tabletWidth) {
-    height: auto;
     flex-direction: row;
     padding-left: 0;
-    padding-right: 0;
-    grid-area: menu;    
-    
+    padding-right: 0;   
   }
 }
 
