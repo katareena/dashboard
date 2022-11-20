@@ -1,10 +1,9 @@
 @use '../../global-styles/variables' as v;
 
-.book-item {
+.book {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 3rem 2rem;
   border-radius: 16px;
   background-color: v.$background-light-primary;
@@ -17,18 +16,51 @@
   }
 };
 
-.book-item-img img {
+.book__img {
+  margin-bottom: 15px;
+};
+
+.book__img img {
   display: block;
   max-width: 120px;
+  height: 183px;
   margin: 0 auto;
 
   @media screen and (max-width: v.$tabletWidth) {
-    max-width: 180px;
+    max-width: 180px;    
   }
 };
 
-// .book-item-info {};
+.book__info {
+  width: 100%;
+}
 
-// .book-item-info-item {};
+.book__title {
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -1.8px;
+  line-height: 29px;
+  color: v.$text-major;
+  margin-bottom: 15px;
 
-// .text-capitalize {};
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.book__info-label {
+  font-weight: 500;
+}
+
+// .book__info-item--title span {
+//   display: block;
+  
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+//   overflow: hidden;
+// }
+
+// .book__info {};
+
+// .book__info-item {};
