@@ -1,12 +1,14 @@
 @use '../../global-styles/variables' as v;
 
-.sidebar {
+.sidebar__wrap {
   display: flex;
   flex-direction: column;
   padding-left: 7.97%;
   padding-right: 7.97%;
+  height: 100%;
 
   @media screen and (max-width: v.$tabletWidth) {
+    height: auto;
     flex-direction: row;
     padding-left: 0;
     padding-right: 0;
@@ -14,6 +16,17 @@
     background-color: v.$background-light-minor1;
     z-index: 1;
     box-shadow: 0 -3px 10px -5px rgba(v.$black, 0.3);
+  }
+}
+
+.sidebar__wrap--sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    height: 100%;
+    position: static;
   }
 }
 

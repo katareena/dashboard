@@ -25,49 +25,72 @@ function Sidebar({sidebarMainData, sidebarMobileData}) {
 
   return (
     <nav className='sidebar'>
-      <Logo />
+      <div className='sidebar__wrap sidebar__wrap--sticky'>      
+        <Logo />
 
-      { width >= BreakpointWidth.tablet && (
-        <>
-          <ul className='sidebar__list sidebar__list--grow'>
-            {sidebarAppNav.map(({ icon, label, to}, index) => (
-              <li
-                className={cn('sidebar__item', {'sidebar__item--opened': opened === index, 'sidebar__item--selected' : location.pathname === (to.includes('/') ? to : `/${to}`)})}
+        { width >= BreakpointWidth.tablet && (
+          <>
+            <ul className='sidebar__list sidebar__list--grow'>
+              {sidebarAppNav.map(({ icon, label, to}, index) => (
+                <li
+                  className={cn('sidebar__item', {'sidebar__item--opened': opened === index, 'sidebar__item--selected' : location.pathname === (to.includes('/') ? to : `/${to}`)})}
+                  key={label}
+                >
+                  <div className='sidebar__item-inner'>
+                    <Link
+                      className='sidebar__link'
+                      to={to}
+                    >
+                      <span className='sidebar__icon'>{icon}</span>
+                      <span className='sidebar__label'>{label}</span>
+                    </Link>
+                    
+                    <button
+                      className='sidebar__button'
+                      type='button'
+                      aria-label={`open a section ${label}`}
+                      onClick={() => handleOpenSection(index)}
+                    >
+                      <ArrowIcon />
+                    </button>
+                  </div>        
+      
+                  <ul className='sidebar__item-content'>
+                    <li>lorem</li>
+                    <li>lorem</li>
+                    <li>lorem</li>
+                  </ul>
+                </li>
+              ))}
+            </ul> 
+      
+            <ul className='sidebar__list sidebar__list--decor sidebar__list--user'>
+              {sidebarUserNav.map(({ icon, label, to }) => (
+                <li
+                className={cn('sidebar__item', {'sidebar__item--selected' : location.pathname === (to.includes('/') ? to : `/${to}`)})}
+                  key={label}>
+                  <div className='sidebar__item-inner'>
+                    <Link
+                      className='sidebar__link'
+                      to={to}
+                    >
+                      <span className='sidebar__icon'>{icon}</span>
+                      <span className='sidebar__label'>{label}</span>
+                    </Link>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        { width < BreakpointWidth.tablet && (
+          <ul className='sidebar__list sidebar__list--mobile'>
+            {sidebarMobileData.map(({ icon, label, to }) => (
+              <li              
+                className={cn('sidebar__item', {'sidebar__item--selected' : location.pathname === (to.includes('/') ? to : `/${to}`)})}
                 key={label}
               >
-                <div className='sidebar__item-inner'>
-                  <Link
-                    className='sidebar__link'
-                    to={to}
-                  >
-                    <span className='sidebar__icon'>{icon}</span>
-                    <span className='sidebar__label'>{label}</span>
-                  </Link>
-                  
-                  <button
-                    className='sidebar__button'
-                    type='button'
-                    aria-label={`open a section ${label}`}
-                    onClick={() => handleOpenSection(index)}
-                  >
-                    <ArrowIcon />
-                  </button>
-                </div>        
-    
-                <ul className='sidebar__item-content'>
-                  <li>lorem</li>
-                  <li>lorem</li>
-                  <li>lorem</li>
-                </ul>
-              </li>
-            ))}
-          </ul> 
-    
-          <ul className='sidebar__list sidebar__list--decor sidebar__list--user'>
-            {sidebarUserNav.map(({ icon, label, to }) => (
-              <li
-              className={cn('sidebar__item', {'sidebar__item--selected' : location.pathname === (to.includes('/') ? to : `/${to}`)})}
-                key={label}>
                 <div className='sidebar__item-inner'>
                   <Link
                     className='sidebar__link'
@@ -80,30 +103,8 @@ function Sidebar({sidebarMainData, sidebarMobileData}) {
               </li>
             ))}
           </ul>
-        </>
-      )}
-
-      { width < BreakpointWidth.tablet && (
-        <ul className='sidebar__list sidebar__list--mobile'>
-          {sidebarMobileData.map(({ icon, label, to }) => (
-            <li              
-              className={cn('sidebar__item', {'sidebar__item--selected' : location.pathname === (to.includes('/') ? to : `/${to}`)})}
-              key={label}
-            >
-              <div className='sidebar__item-inner'>
-                <Link
-                  className='sidebar__link'
-                  to={to}
-                >
-                  <span className='sidebar__icon'>{icon}</span>
-                  <span className='sidebar__label'>{label}</span>
-                </Link>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-
+        )}
+      </div>
     </nav>
   )
 }
