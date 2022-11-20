@@ -1,0 +1,18 @@
+@use '../../global-styles/variables' as v;
+
+.loading p {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -1.8px;
+  line-height: 29px;
+  color: v.$text-major;
+
+  margin-bottom: 25px;
+}
+
+.loading span {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: v.$text-minor;
+}

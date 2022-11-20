@@ -1,8 +1,12 @@
 import React from 'react';
+import './loading.scss';
 
-function Loading() {
+function Loading({children}) {
   return (
-    <div>Loading...</div>
+    <div className='loading'>      
+      {children}
+      <span>Loading...</span>
+    </div>
   );
 }
 

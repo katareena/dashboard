@@ -3,7 +3,7 @@ import { useGlobalContext } from '../../context';
 import Book from '../book/book';
 import Loading from '../loading/loading';
 import coverImg from '../../assets/cover-not-found.jpg';
-import './products.scss'
+import './products.scss';
 
 function Products() {
   const {loading, books, resultTitle} = useGlobalContext();
@@ -17,7 +17,11 @@ function Products() {
     }
   });
 
-  if (loading) return <Loading />;
+  if (loading) return (
+    <Loading >
+      <p>Redirecting to the Product Page</p>
+    </Loading>
+  );  
 
   return (
     <section className='booklist'>
@@ -31,7 +35,7 @@ function Products() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Products;
