@@ -8,7 +8,7 @@ import { NumberOfProducts } from '../../constants/constants';
 
 
 function Products() {
-  const {searchTerm, loading, books, resultTitle, isInputValid} = useGlobalContext();
+  const {loading, books, resultTitle, isInputValid} = useGlobalContext();
   const [numberOfProducts, setNumberOfProducts] = useState(NumberOfProducts.Showed);
 
   function handleClick() {
@@ -23,8 +23,6 @@ function Products() {
       cover_img: singleBook.cover_id ? `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg` : coverImg,
     }
   });
-
-  console.log(searchTerm)
 
   if (loading) return (
     <Loading />

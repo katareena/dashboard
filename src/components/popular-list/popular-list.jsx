@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Popular from '../popular/popular';
 import Subtitle from '../subtitle/subtitle';
 import { ReactComponent as LinkIcon } from '../../assets/icons/arrow-link-icon.svg';
+import { AppRoute } from '../../constants/constants';
 
 function PopularList({products}) {
   return (
@@ -24,7 +25,7 @@ function PopularList({products}) {
         ))}
       </ul>
 
-      <Link className='popular-list__link' to={'/all-products'}>
+      <Link className='popular-list__link' to={AppRoute.Products}>
         <span className='popular-list__link-text'>All Products</span>
         <span className='popular-list__link-icon'>
           <LinkIcon />
