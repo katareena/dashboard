@@ -26,17 +26,6 @@
   }
 }
 
-.sidebar__wrap--sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-
-  @media screen and (max-width: v.$tabletWidth) {
-    height: 100%;
-    position: static;
-  }
-}
-
 .sidebar .logo {
   @media screen and (max-width: v.$tabletWidth) {
     display: none;

@@ -25,7 +25,7 @@ function Sidebar({sidebarMainData, sidebarMobileData}) {
 
   return (
     <nav className='sidebar'>
-      <div className='sidebar__wrap sidebar__wrap--sticky'>      
+      <div className='sidebar__wrap'>      
         <Logo />
 
         { width >= BreakpointWidth.tablet && (
