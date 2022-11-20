@@ -1,12 +1,16 @@
 import React from 'react';
 import { useGlobalContext } from '../../context';
+import './products.scss';
 import Product from '../product/product';
 import Loading from '../loading/loading';
 import coverImg from '../../assets/cover-not-found.jpg';
-import './products.scss';
+import { NumberOfProducts } from '../../constants/constants';
+
 
 function Products() {
   const {loading, books, resultTitle} = useGlobalContext();
+
+  console.log(books);
 
   const booksWithCovers = books.map((singleBook) => {
     return {
@@ -30,7 +34,7 @@ function Products() {
       </div>
 
       <div className='booklist__layout'>
-        {booksWithCovers.slice(0, 30).map((book, index) => <Product key={index} product={book} />)}
+        {booksWithCovers.slice(0, NumberOfProducts.Showed).map((book, index) => <Product key={index} product={book} />)}
       </div>
     </>
   );

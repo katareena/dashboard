@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useCallback } from 'react';
-import { URL, SearchFormNotification, NumberOfShowedItems } from './constants/constants'
+import { URL, SearchFormNotification, NumberOfProducts } from './constants/constants';
 
 const AppContext = React.createContext();
 
@@ -19,7 +19,7 @@ const AppProvider = ({children}) => {
       const {docs} = data;
 
       if (docs) {
-        const newBooks = docs.slice(0, NumberOfShowedItems).map((bookSingle) => {
+        const newBooks = docs.slice(0, NumberOfProducts.Needed).map((bookSingle) => {
           const {key, author_name, cover_i, edition_count, first_publish_year, title} = bookSingle;
 
           return {

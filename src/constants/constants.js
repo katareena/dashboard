@@ -23,7 +23,13 @@ export const SearchFormNotification = {
   NoFound: 'No Search Result Found!',
 }
 
-export const NumberOfShowedItems = 20;
+export const NumberOfProducts = {
+  Needed: 30,
+  Showed: 9,
+  Adding: 3,
+}
+
+export const NumberOfShowedItems = 9;
 
 export const URL = 'https://openlibrary.org/search.json?title=';
 
