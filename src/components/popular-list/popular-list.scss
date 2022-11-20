@@ -21,28 +21,6 @@
   & span {
     margin-bottom: -10px;
   }
-  
-  &:hover,
-  &:focus {
-    color: v.$accent1;
-  }
-
-  &:hover .popular-list__link-icon svg,
-  &:focus .popular-list__link-icon svg {
-    fill: v.$accent1;
-  }
-
-  @media screen and (max-width: v.$tabletWidth) {
-    &:hover,
-    &:focus {
-      color: v.$accent2;
-    }
-
-    &:hover .popular-list__link-icon svg,
-    &:focus .popular-list__link-icon svg {
-      fill: v.$accent2;
-    }
-  }
 }
 
 .popular-list__link-text {
@@ -52,4 +30,19 @@
 .popular-list__link-icon svg {
   fill: v.$accent2;
   margin-bottom: -1px;
+}
+
+// hover&focus
+.popular-list__link {
+  @media screen and (min-width: v.$tabletWidth) {
+    &:hover,
+    &:focus {
+      color: v.$accent1;
+    }
+  
+    &:hover .popular-list__link-icon svg,
+    &:focus .popular-list__link-icon svg {
+      fill: v.$accent1;
+    }
+  }
 }

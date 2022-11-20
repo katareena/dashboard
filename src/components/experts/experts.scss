@@ -13,24 +13,11 @@
 .experts__item {
   display: flex;
   max-width: 190px;
-  height: 100%;
-  cursor: pointer;
+  height: 100%;  
   transform: scale(1);
-
-  &:hover .experts__img,
-  &:focus .experts__img {
-    transform: scale(1.1);
-    transition: v.$transition;
-  }
 
   @media screen and (max-width: v.$tabletWidth) {
     flex-direction: column;
-
-    &:hover .experts__img,
-    &:focus .experts__img {
-      transform: scale(1);
-      margin-bottom: 10px;
-    }
   }
 }
 
@@ -70,4 +57,16 @@
   font-size: 14px;
   line-height: 17px;
   color: v.$text-minor;
+}
+
+// hover&focus
+.experts__item {
+  @media screen and (min-width: v.$tabletWidth) {
+    &:hover .experts__img,
+    &:focus .experts__img {
+      transform: scale(1.1);
+      transition: v.$transition;
+      cursor: pointer;
+    }
+  }
 }

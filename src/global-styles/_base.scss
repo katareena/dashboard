@@ -54,30 +54,30 @@ img {
 
 a {
   transition: v.$transition;
-  cursor: pointer;
+  cursor: default;
 
-  &:hover,
-  &:focus {
-    transition: v.$transition;
-  }
+  @media screen and (min-width: v.$tabletWidth) {
+    cursor: pointer;
 
-  @media screen and (max-width: v.$tabletWidth) {
-    cursor: auto;
+    &:hover,
+    &:focus {
+      transition: v.$transition;
+    }    
   }
 }
 
 button {
   font-family: 'Work Sans', 'Tahoma', sans-serif;
   transition: v.$transition;
-  cursor: pointer;
+  cursor: default;
 
-  &:hover,
-  &:focus {
-    transition: v.$transition;
-  }
+  @media screen and (min-width: v.$tabletWidth) {
+    cursor: pointer;
 
-  @media screen and (max-width: v.$tabletWidth) {
-    cursor: auto;
+    &:hover,
+    &:focus {
+      transition: v.$transition;
+    }    
   }
 }
 

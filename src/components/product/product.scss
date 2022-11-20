@@ -8,12 +8,6 @@
   border-radius: 16px;
   background-color: v.$background-light-primary;
   transition: v.$transition;
-
-  &:hover {
-    box-shadow: v.$box-shadow1;
-    transition: v.$transition;
-    cursor: pointer;
-  }
 };
 
 .product__img {
@@ -57,5 +51,13 @@
   @media screen and (max-width: v.$mobileWidth) {
     text-align: center;
   }  
+}
+
+.product:hover {
+  @media screen and (min-width: v.$tabletWidth) {
+    box-shadow: v.$box-shadow1;
+    transition: v.$transition;
+    cursor: pointer;
+  }
 }
 

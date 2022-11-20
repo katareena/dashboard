@@ -54,11 +54,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &:hover svg,
-  &:focus svg {
-    fill: v.$accent2;
-  }
 }
 
 .user-nav__link.user-nav__link--avatar {
@@ -108,5 +103,15 @@
   @media screen and (max-width: v.$mobileWidth) {
     width: 44px;
     height: 44px;
+  }
+}
+
+// hover&focus
+.user-nav__link {
+  @media screen and (min-width: v.$tabletWidth) {
+    &:hover svg,
+    &:focus svg {
+      fill: v.$accent2;
+    }
   }
 }

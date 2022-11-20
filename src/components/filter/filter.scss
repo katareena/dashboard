@@ -7,29 +7,12 @@
   position: relative;
 }
 
-
 .filter__inner {
   display: flex;
 }
 
 .filter__filtered {
   width: 55px;
-
-  & svg {
-    fill: v.$text-minor;
-  }
-
-  &:hover svg,
-  &:focus svg {
-    fill: v.$text-accent;
-  }
-
-  @media screen and (max-width: v.$tabletWidth) {
-    &:hover svg,
-    &:focus svg {
-      fill: v.$text-minor;
-    }
-  }
 }
 
 .filter__toggle {
@@ -45,24 +28,6 @@
   & span {
     text-align: end;
     margin-top: 2px;
-  }
-
-  &:hover {
-    color: v.$accent1;
-  }
-
-  &:hover .filter__toggle-icon svg {
-    fill: v.$accent1;
-  }
-
-  @media screen and (max-width: v.$tabletWidth) {
-    &:hover {
-      color: v.$accent2;
-    }
-
-    &:hover .filter__toggle-icon svg {
-      fill: v.$accent2;
-    }
   }
 }
 
@@ -107,12 +72,42 @@
   padding: 10px 16px 14px;
   font-size: 14px;
   outline: 0;
-  cursor: pointer;
   transition: v.$transition;
+}
 
-  &:hover,
-  &:focus {
-    background-color: v.$background-light-minor1;
-    transition: v.$transition;
+// hover&focus
+.filter__filtered {
+  @media screen and (min-width: v.$tabletWidth) {
+    & svg {
+      fill: v.$text-minor;
+    }
+  
+    &:hover svg,
+    &:focus svg {
+      fill: v.$text-accent;
+    }
+  }
+}
+
+.filter__toggle {
+  @media screen and (min-width: v.$tabletWidth) {
+    &:hover {
+      color: v.$accent1;
+    }
+  
+    &:hover .filter__toggle-icon svg {
+      fill: v.$accent1;
+    }
+  }
+}
+
+.filter__option {
+  @media screen and (min-width: v.$tabletWidth) {
+    &:hover,
+    &:focus {
+      background-color: v.$background-light-minor1;
+      transition: v.$transition;
+      cursor: pointer;
+    }
   }
 }
