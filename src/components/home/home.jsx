@@ -4,7 +4,7 @@ import './home.scss';
 import Overview from '../overview/overview';
 import Experts from '../experts/experts';
 import Income from '../income/income';
-import ProductList from '../product-list/product-list';
+import PopularList from '../popular-list/popular-list';
 import Comments from '../comments/comments';
 
 function Home({incomes, products, experts}) {
@@ -25,7 +25,7 @@ function Home({incomes, products, experts}) {
         </div>
 
         <div className='home__block home__block--grid-aria-3'>
-          <ProductList products={products}/>
+          <PopularList products={products}/>
         </div>
 
         <div className='home__block home__block--grid-aria-4'>

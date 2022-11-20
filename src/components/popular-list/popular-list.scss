@@ -1,13 +1,13 @@
 @use '../../global-styles/variables' as v;
 
-.product-list__list {
+.popular-list__list {
   margin-top: -10px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.product-list__link {
+.popular-list__link {
   display: flex;
   min-height: 66px;
   flex-shrink: 0;
@@ -27,8 +27,8 @@
     color: v.$accent1;
   }
 
-  &:hover .product-list__link-icon svg,
-  &:focus .product-list__link-icon svg {
+  &:hover .popular-list__link-icon svg,
+  &:focus .popular-list__link-icon svg {
     fill: v.$accent1;
   }
 
@@ -38,18 +38,18 @@
       color: v.$accent2;
     }
 
-    &:hover .product-list__link-icon svg,
-    &:focus .product-list__link-icon svg {
+    &:hover .popular-list__link-icon svg,
+    &:focus .popular-list__link-icon svg {
       fill: v.$accent2;
     }
   }
 }
 
-.product-list__link-text {
+.popular-list__link-text {
   margin-right: 8px;
 }
 
-.product-list__link-icon svg {
+.popular-list__link-icon svg {
   fill: v.$accent2;
   margin-bottom: -1px;
 }

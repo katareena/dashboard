@@ -1,20 +1,20 @@
 import React from 'react';
-import './product-list.scss';
+import './popular-list.scss';
 import { Link } from 'react-router-dom';
-import Product from '../product/product';
+import Popular from '../popular/popular';
 import Subtitle from '../subtitle/subtitle';
 import { ReactComponent as LinkIcon } from '../../assets/icons/arrow-link-icon.svg';
 
-function ProductList({products}) {
+function PopularList({products}) {
   return (
     <>
       <Subtitle>
         <h3>Popular Products</h3>
       </Subtitle>      
 
-      <ul className='product-list__list'>
+      <ul className='popular-list__list'>
         {products.map(({ title, icon, description, price }) => (
-          <Product
+          <Popular
             title={title}
             icon={icon}
             description={description}
@@ -24,9 +24,9 @@ function ProductList({products}) {
         ))}
       </ul>
 
-      <Link className='product-list__link' to={'/all-products'}>
-        <span className='product-list__link-text'>All Products</span>
-        <span className='product-list__link-icon'>
+      <Link className='popular-list__link' to={'/all-products'}>
+        <span className='popular-list__link-text'>All Products</span>
+        <span className='popular-list__link-icon'>
           <LinkIcon />
         </span>           
       </Link>
@@ -34,4 +34,4 @@ function ProductList({products}) {
   )
 }
 
-export default ProductList;
+export default PopularList;

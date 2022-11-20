@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGlobalContext } from '../../context';
-import Book from '../book/book';
+import Product from '../product/product';
 import Loading from '../loading/loading';
 import coverImg from '../../assets/cover-not-found.jpg';
 import './products.scss';
@@ -30,7 +30,7 @@ function Products() {
       </div>
 
       <div className='booklist__layout'>
-        {booksWithCovers.slice(0, 30).map((book, index) => <Book key={index} book={book} />)}
+        {booksWithCovers.slice(0, 30).map((book, index) => <Product key={index} product={book} />)}
       </div>
     </>
   );
