@@ -30,17 +30,14 @@ function UserNav({user, notifications}) {
         </>
       )}
 
-
-
       <li className='user-nav__item user-nav__item--avatar'>
         <Link className='user-nav__link user-nav__link--avatar' to='/profile' aria-label='go to your personal profile'>
           <img
             className='user-nav__avatar'
             src={user.avatar}
-            alt={user.name}
+            alt={`avatar of ${user.name}`}
             width='54'
             height='54'
-            aria-label={`avatar of ${user.name}`}
           >
           </img>
 
@@ -50,15 +47,7 @@ function UserNav({user, notifications}) {
               <span className='user-nav__avatar-icon'><ArrowIcon /></span>
             </>
           )}
-
-
-
         </Link>
-
-
-
-
-
       </li>
     </ul>
   )

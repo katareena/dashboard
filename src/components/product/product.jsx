@@ -6,7 +6,7 @@ function Product({product}) {
   return (
     <article className='product'>
       <div className='product__img'>
-        <img src={product.cover_img} alt='cover' />
+        <img src={product.cover_img} alt={product.title} />
       </div>
 
       <div className='product__info'>
