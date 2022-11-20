@@ -53,14 +53,9 @@
   font-weight: 500;
 }
 
-// .product__info-item--title span {
-//   display: block;
-  
-//   text-overflow: ellipsis;
-//   white-space: nowrap;
-//   overflow: hidden;
-// }
+.product__info-item {
+  @media screen and (max-width: v.$mobileWidth) {
+    text-align: center;
+  }  
+}
 
-// .product__info {};
-
-// .product__info-item {};
