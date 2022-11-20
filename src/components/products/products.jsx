@@ -5,8 +5,6 @@ import Loading from '../loading/loading';
 import coverImg from '../../assets/cover-not-found.jpg';
 import './products.scss'
 
-// https://covers.openlibrary.org/b/id/240727-S.jpg
-
 function Products() {
   const {loading, books, resultTitle} = useGlobalContext();
 

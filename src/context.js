@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useCallback } from 'react';
+import { URL, SearchFormNotification, NumberOfShowedItems } from './constants/constants'
 
-const URL = 'https://openlibrary.org/search.json?title=';
 const AppContext = React.createContext();
 
 const AppProvider = ({children}) => {
-  const [searchTerm, setSearchTerm] = useState('the lost world');
+  const [searchTerm, setSearchTerm] = useState('example');
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [resultTitle, setResultTitle] = useState('');
@@ -18,10 +18,8 @@ const AppProvider = ({children}) => {
       const data = await response.json();
       const {docs} = data;
 
-      // console.log(docs);
-
       if (docs) {
-        const newBooks = docs.slice(0, 20).map((bookSingle) => {
+        const newBooks = docs.slice(0, NumberOfShowedItems).map((bookSingle) => {
           const {key, author_name, cover_i, edition_count, first_publish_year, title} = bookSingle;
 
           return {
@@ -36,15 +34,15 @@ const AppProvider = ({children}) => {
 
         setBooks(newBooks);
 
-        if (newBooks.length > 1) {
-          setResultTitle('Your Search Result');
+        if (newBooks.length > 0) {
+          setResultTitle(SearchFormNotification.Default);
         } else {
-          setResultTitle('No Search Result Found!')
+          setResultTitle(SearchFormNotification.NoFound)
         }
 
       } else {
         setBooks([]);
-        setResultTitle('No Search Result Found!');
+        setResultTitle(SearchFormNotification.NoFound);
       }
       setLoading(false);
 

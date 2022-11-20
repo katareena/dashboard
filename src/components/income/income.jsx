@@ -3,13 +3,13 @@ import { useWindowSize } from '../../hooks/use-window-size';
 import './income.scss';
 import { translateHeight } from '../../utils/translate-height';
 import { setColor } from '../../utils/set-color';
-import { breakpointWidth, incomeMobile } from '../../constants/constants';
+import { BreakpointWidth, incomeMobile } from '../../constants/constants';
 import Filter from '../filter/filter';
 import Subtitle from '../subtitle/subtitle';
 
 function Income({incomes}) {
   const [width, ] = useWindowSize();
-  const customIncomes = width < breakpointWidth.mobile ? incomes.slice(0, incomeMobile) : incomes;
+  const customIncomes = width < BreakpointWidth.mobile ? incomes.slice(0, incomeMobile) : incomes;
 
   return (
     <>

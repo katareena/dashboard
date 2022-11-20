@@ -3,7 +3,6 @@ import './book.scss';
 import { Link } from 'react-router-dom';
 
 function Book({book}) {
-
   return (
     <article className='book-item'>
       <div className='book-item-img'>

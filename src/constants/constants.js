@@ -18,12 +18,21 @@ export const AuthorizationStatus = {
   Unknown: 'UNKNOWN',
 }
 
+export const SearchFormNotification = {
+  Default: 'Your Search Result',
+  NoFound: 'No Search Result Found!',
+}
+
+export const NumberOfShowedItems = 20;
+
+export const URL = 'https://openlibrary.org/search.json?title=';
+
 export const ChartColor = {
   First: '#454EEC',
   Second: '#98F8A0',
 }
 
-export const breakpointWidth = {
+export const BreakpointWidth = {
   tablet: 767,
   mobile: 576,
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useWindowSize } from '../../hooks/use-window-size';
 import { Link, useLocation } from 'react-router-dom';
-import { breakpointWidth } from '../../constants/constants';
+import { BreakpointWidth } from '../../constants/constants';
 import Logo from '../logo/logo';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow-icon.svg';
 import './sidebar.scss';
@@ -21,13 +21,13 @@ function Sidebar({sidebarMainData, sidebarMobileData}) {
     }
 
     return setOpened(index);
-  };  
+  };
 
   return (
     <nav className='sidebar'>
       <Logo />
 
-      { width >= breakpointWidth.tablet && (
+      { width >= BreakpointWidth.tablet && (
         <>
           <ul className='sidebar__list sidebar__list--grow'>
             {sidebarAppNav.map(({ icon, label, to}, index) => (
@@ -83,7 +83,7 @@ function Sidebar({sidebarMainData, sidebarMobileData}) {
         </>
       )}
 
-      { width < breakpointWidth.tablet && (
+      { width < BreakpointWidth.tablet && (
         <ul className='sidebar__list sidebar__list--mobile'>
           {sidebarMobileData.map(({ icon, label, to }) => (
             <li              

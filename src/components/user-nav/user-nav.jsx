@@ -6,7 +6,7 @@ import { ReactComponent as NotificationsIcon } from '../../assets/icons/notifica
 import { ReactComponent as EditIcon } from '../../assets/icons/edit-icon.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow-icon.svg';
 import cn from 'classnames';
-import { breakpointWidth } from '../../constants/constants';
+import { BreakpointWidth } from '../../constants/constants';
 
 function UserNav({user, notifications}) {
   const isNotifications = notifications.length !== 0;
@@ -15,7 +15,7 @@ function UserNav({user, notifications}) {
   return (
     <ul className='user-nav'>
 
-      { width >= breakpointWidth.mobile && (
+      { width >= BreakpointWidth.mobile && (
         <>
           <li className={cn('user-nav__item', {'user-nav__item--notifications': isNotifications})}>
             <Link className='user-nav__link' to='/profile/notification' aria-label='view notifications'>
@@ -44,7 +44,7 @@ function UserNav({user, notifications}) {
           >
           </img>
 
-          {width < breakpointWidth.mobile && (
+          {width < BreakpointWidth.mobile && (
             <>
               <span className='user-nav__avatar-name'>{user.name}</span>
               <span className='user-nav__avatar-icon'><ArrowIcon /></span>

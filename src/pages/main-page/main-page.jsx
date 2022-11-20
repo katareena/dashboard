@@ -2,13 +2,13 @@ import React from 'react';
 import './main-page.scss';
 import { useWindowSize } from '../../hooks/use-window-size';
 import { Outlet } from 'react-router-dom';
-import { breakpointWidth, sidebarMobileHeight } from '../../constants/constants';
+import { BreakpointWidth, sidebarMobileHeight } from '../../constants/constants';
 import Header from '../../components/header/header';
 import Sidebar from '../../components/sidebar/sidebar';
 
 function MainPage({sidebarMainData, sidebarMobileData, user, notifications}) {
   const [width, height] = useWindowSize();
-  const contetntHeight = width < breakpointWidth.tablet && height - sidebarMobileHeight;
+  const contetntHeight = width < BreakpointWidth.tablet && height - sidebarMobileHeight;
 
   return (
     <div className='main-page' style={{height: height}}>
