@@ -1,5 +1,14 @@
 @use '../../global-styles/variables' as v;
 
+.sidebar {
+  background-color: v.$white;
+  border-top: solid 1px v.$background-light-minor3;
+
+  @media screen and (max-width: v.$tabletWidth) {
+    z-index: 1;
+  }  
+}
+
 .sidebar__wrap {
   display: flex;
   flex-direction: column;
@@ -12,10 +21,8 @@
     flex-direction: row;
     padding-left: 0;
     padding-right: 0;
-    grid-area: menu;
-    background-color: v.$background-light-minor1;
-    z-index: 1;
-    box-shadow: 0 -3px 10px -5px rgba(v.$black, 0.3);
+    grid-area: menu;    
+    
   }
 }
 
