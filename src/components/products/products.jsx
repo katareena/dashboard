@@ -24,17 +24,15 @@ function Products() {
   );  
 
   return (
-    <section className='booklist'>
-      <div className='booklist__wrap'>
-        <div className='booklist__title'>
-          <h2>{resultTitle}</h2>
-        </div>
-
-        <div className='booklist__content'>
-          {booksWithCovers.slice(0, 30).map((book, index) => <Book key={index} book={book} />)}
-        </div>
+    <>
+      <div className='booklist__title'>
+        <h2>{resultTitle}</h2>
       </div>
-    </section>
+
+      <div className='booklist__layout'>
+        {booksWithCovers.slice(0, 30).map((book, index) => <Book key={index} book={book} />)}
+      </div>
+    </>
   );
 }
 

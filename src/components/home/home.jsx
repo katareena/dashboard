@@ -10,11 +10,11 @@ import Comments from '../comments/comments';
 function Home({incomes, products, experts}) {
   return (
     <>
-      <h1 className='visually-hidden'>Dashboard: an application for organizing your money routine</h1>      
-      
-      <div className='home__wrap'>
-        <h2 className='home__title'>Dashboard</h2>    
+      <div className='home__title'>
+        <h2>Dashboard</h2> 
+      </div>
 
+      <div className='home__layout'>
         <div className='home__block home__block--grid-aria-1'>
           <Overview />
           <Experts experts={experts}/>
@@ -31,7 +31,7 @@ function Home({incomes, products, experts}) {
         <div className='home__block home__block--grid-aria-4'>
           <Comments />
         </div>
-      </div>
+      </div> 
     </>
   )
 }

@@ -1,4 +1,5 @@
 @use '../../global-styles/variables' as v;
+@use '../../global-styles/mixins' as m;
 
 .main-page {
   display: grid;
@@ -39,4 +40,8 @@
 
 .main-page__main {
   padding: 25px 20px 15px 20px;
+}
+
+.main-page__wrap {
+  @include m.main-bound;
 }

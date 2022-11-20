@@ -24,7 +24,11 @@ function MainPage({sidebarMainData, sidebarMobileData, user, notifications}) {
         />
 
         <main className='main-page__main'>
-          <Outlet />
+          <h1 className='visually-hidden'>Dashboard: an application for organizing your money routine</h1> 
+          
+          <div className='main-page__wrap'>
+            <Outlet />
+          </div>          
         </main>       
       </div>
     </div>

@@ -2,17 +2,24 @@
 @use '../../global-styles/mixins' as m;
 
 .home__wrap {
-  width: 100%;
-  max-width: 1064px;
-  margin: 0 auto;
+  @include m.main-bound;
+}
 
+.home__title {
+  @include m.title;
+
+  @media screen and (max-width: v.$mobileWidth) {
+    display: none;
+  }  
+} 
+
+.home__layout {
   display: grid;
   grid-template-columns: 31.20% 31.20% 33.83%;
-  grid-template-rows: auto minmax(184.5px, max-content) minmax(184.5px, max-content) 156px minmax(189px, max-content);
+  grid-template-rows: minmax(184.5px, max-content) minmax(184.5px, max-content) 156px minmax(189px, max-content);
   grid-column-gap: 1.88%;
   grid-row-gap: 20px;
   grid-template-areas:
-    'title title title'
     'aria-1 aria-1 aria-3'
     'aria-1 aria-1 aria-3'
     'aria-2 aria-2 aria-3'
@@ -21,7 +28,6 @@
   @media screen and (max-width: v.$desktopWidth) {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    'title title'
     'aria-1 aria-1'
     'aria-1 aria-1'
     'aria-2 aria-2'
@@ -34,31 +40,6 @@
     flex-direction: column;
   }
 }
-
-.home__title {
-  display: block;
-  height: 60px;
-  line-height: 60px;
-  font-weight: 500;  
-  letter-spacing: -2.5px;
-  @include m.adaptiv-font(50, 40);
-
-  grid-area: title;
-
-  @media screen and (min-width: v.$maxWidth) {
-    font-size: 50px;
-  }
-
-  @media screen and (max-width: v.$tabletWidth) {
-    grid-area: none;
-    height: 40px;
-    line-height: 40px;
-  }
-
-  @media screen and (max-width: v.$mobileWidth) {
-    display: none;
-  }
-} 
 
 .home__block {
   background: v.$white;
