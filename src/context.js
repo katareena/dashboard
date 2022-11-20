@@ -1,14 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useCallback } from 'react';
-import { URL, SearchFormNotification, NumberOfProducts } from './constants/constants';
+import { URL, SearchFormNotification, NumberOfProducts, DefaultInputValue } from './constants/constants';
 
 const AppContext = React.createContext();
 
 const AppProvider = ({children}) => {
-  const [searchTerm, setSearchTerm] = useState('example');
+  const [searchTerm, setSearchTerm] = useState(DefaultInputValue);
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [resultTitle, setResultTitle] = useState('');
+  const [isInputValid, setIsInputValud] = useState(true);
 
   const fetchBooks = useCallback(async() => {
     setLoading(true);
@@ -34,10 +35,12 @@ const AppProvider = ({children}) => {
 
         setBooks(newBooks);
 
-        if (newBooks.length > 0) {
+        if (searchTerm === DefaultInputValue && newBooks.length > 0) {
           setResultTitle(SearchFormNotification.Default);
+        } else if (searchTerm !== DefaultInputValue && newBooks.length > 0) {
+          setResultTitle(SearchFormNotification.Searched);
         } else {
-          setResultTitle(SearchFormNotification.NoFound)
+          setResultTitle(SearchFormNotification.NoFound);
         }
 
       } else {
@@ -58,7 +61,7 @@ const AppProvider = ({children}) => {
 
   return (
     <AppContext.Provider value = {{
-      loading, books, setSearchTerm, resultTitle, setResultTitle,
+      isInputValid, setIsInputValud, searchTerm, loading, books, setSearchTerm, resultTitle, setResultTitle,
     }}>
       {children}
     </AppContext.Provider>

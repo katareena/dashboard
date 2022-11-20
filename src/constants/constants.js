@@ -19,9 +19,13 @@ export const AuthorizationStatus = {
 }
 
 export const SearchFormNotification = {
-  Default: 'Your Search Result',
+  Default: 'All Products',
+  Searched: 'Your Search Result',
   NoFound: 'No Search Result Found!',
+  Empty: 'Please Enter Something ...',
 }
+
+export const DefaultInputValue = 'example';
 
 export const NumberOfProducts = {
   Needed: 30,

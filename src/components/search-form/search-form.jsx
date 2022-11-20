@@ -4,25 +4,35 @@ import { useGlobalContext } from '../../context';
 import './search-form.scss';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search-icon.svg';
 import { ReactComponent as AddIcon } from '../../assets/icons/plus-icon.svg';
-import { AppRoute } from '../../constants/constants';
+import { AppRoute, SearchFormNotification, DefaultInputValue } from '../../constants/constants';
 
 function SearchForm() {
-  const {setSearchTerm, setResultTitle} = useGlobalContext();
+  const {setSearchTerm, setResultTitle, setIsInputValud} = useGlobalContext();
   const [inputText, setInputText] = useState('');
   const navigate = useNavigate();
   
   // set focus
   const input = useRef(null);
-  useEffect(() => input.current?.focus(), []);
+  useEffect(() => {
+    input.current?.focus();
+
+    if (inputText.length === 0) {
+      setSearchTerm(DefaultInputValue);
+      setResultTitle(SearchFormNotification.Default);
+    }
+
+  }, [inputText.length, setSearchTerm, setResultTitle]);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     let tempSearchTerm = inputText.trim();
 
-    if((tempSearchTerm.replace(/[^\w\s]/gi,'')).length === 0){
-      setSearchTerm('the lost world');
-      setResultTitle('Please Enter Something ...');
+    if ((tempSearchTerm.replace(/[^\w\s]/gi,'')).length === 0) {
+      setIsInputValud(false);
+      setResultTitle(SearchFormNotification.Empty);
+      return;
     } else {
+      setIsInputValud(true);
       setSearchTerm(inputText);
     }
 
@@ -52,12 +62,12 @@ function SearchForm() {
             id='search-form'
             type='text'
             name='search-form'
-            autoComplete='off'
-            minLength='2'
             placeholder='Search'
+            autoComplete='off'
             ref={input}
             value={inputText}
             onChange={(evt)=>setInputText(evt.target.value)}
+            required
           />
         </div>
       </div>

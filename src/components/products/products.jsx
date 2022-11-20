@@ -8,7 +8,7 @@ import { NumberOfProducts } from '../../constants/constants';
 
 
 function Products() {
-  const {loading, books, resultTitle} = useGlobalContext();
+  const {searchTerm, loading, books, resultTitle, isInputValid} = useGlobalContext();
   const [numberOfProducts, setNumberOfProducts] = useState(NumberOfProducts.Showed);
 
   function handleClick() {
@@ -24,10 +24,10 @@ function Products() {
     }
   });
 
+  console.log(searchTerm)
+
   if (loading) return (
-    <Loading >
-      <p>Redirecting to the Product Page</p>
-    </Loading>
+    <Loading />
   );  
 
   return (
@@ -36,11 +36,13 @@ function Products() {
         <h2>{resultTitle}</h2>
       </div>
 
-      <div className='products__layout'>
-        {booksWithCovers.slice(0, numberOfProducts).map((book, index) => <Product key={index} product={book} />)}
-      </div>
+      {isInputValid && (
+        <div className='products__layout'>
+          {booksWithCovers.slice(0, numberOfProducts).map((book, index) => <Product key={index} product={book} />)}
+        </div>
+      )}
 
-      {numberOfProducts < NumberOfProducts.Needed && (
+      {isInputValid && books.length > 0 && numberOfProducts < NumberOfProducts.Needed && (
         <div className='products__more'>
           <button
             className='products__button'
