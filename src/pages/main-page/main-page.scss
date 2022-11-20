@@ -16,13 +16,17 @@
 
   @media screen and (max-width: v.$tabletWidth) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 65px;
+    grid-template-rows: 1fr v.$mobileSidebar;
     overflow: hidden;
     height: -webkit-fill-available;
 
     grid-template-areas: 
       'content'
       'menu';
+  }
+
+  @media screen and (max-width: v.$mobileWidth) {
+    position: relative;
   }
 }
 
@@ -33,7 +37,7 @@
 
   @media screen and (max-width: v.$tabletWidth) {
     grid-area: content;
-    height: calc(100vh - 65px);
+    height: calc(100vh - v.$mobileSidebar);
     overflow: scroll;
   }
 }
