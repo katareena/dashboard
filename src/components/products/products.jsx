@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGlobalContext } from '../../context';
 import './products.scss';
 import Product from '../product/product';
@@ -9,8 +9,11 @@ import { NumberOfProducts } from '../../constants/constants';
 
 function Products() {
   const {loading, books, resultTitle} = useGlobalContext();
+  const [numberOfProducts, setNumberOfProducts] = useState(NumberOfProducts.Showed);
 
-  console.log(books);
+  function handleClick() {
+    setNumberOfProducts(numberOfProducts + NumberOfProducts.Adding)
+  }
 
   const booksWithCovers = books.map((singleBook) => {
     return {
@@ -29,13 +32,27 @@ function Products() {
 
   return (
     <>
-      <div className='booklist__title'>
+      <div className='products__title'>
         <h2>{resultTitle}</h2>
       </div>
 
-      <div className='booklist__layout'>
-        {booksWithCovers.slice(0, NumberOfProducts.Showed).map((book, index) => <Product key={index} product={book} />)}
+      <div className='products__layout'>
+        {booksWithCovers.slice(0, numberOfProducts).map((book, index) => <Product key={index} product={book} />)}
       </div>
+
+      {numberOfProducts < NumberOfProducts.Needed && (
+        <div className='products__more'>
+          <button
+            className='products__button'
+            type='button'
+            onClick={() => {
+              handleClick()
+            }}
+          >
+            Show more
+          </button>
+        </div>
+      )}
     </>
   );
 }

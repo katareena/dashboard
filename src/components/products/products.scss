@@ -1,11 +1,11 @@
 @use '../../global-styles/variables' as v;
 @use '../../global-styles/mixins' as m;
 
-.booklist__title {
+.products__title {
   @include m.title;
 } 
 
-.booklist__layout {
+.products__layout {
   display: grid;
   grid-template-columns: repeat(3, minmax(205px, 1fr));
   gap: 25px;
@@ -22,3 +22,37 @@
     grid-template-columns: minmax(205px, 1fr);
   }
 };
+
+.products__more {
+  width: 100%;
+  min-height: 49px;
+  margin: 25px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.products__button {
+  padding: 10px 20px;
+  width: 300px;
+  background-color: v.$accent2;
+  border-radius: 7px;
+  height: 100%;
+
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -1.8px;
+  line-height: 29px;
+  color: v.$white;
+}
+
+.products__button {
+  @media screen and (min-width: v.$tabletWidth) {
+    &:hover,
+    &:focus {
+      color: v.$accent1;
+    }
+  }
+}

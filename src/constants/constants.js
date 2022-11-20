@@ -25,11 +25,9 @@ export const SearchFormNotification = {
 
 export const NumberOfProducts = {
   Needed: 30,
-  Showed: 9,
-  Adding: 3,
+  Showed: 6,
+  Adding: 6,
 }
-
-export const NumberOfShowedItems = 9;
 
 export const URL = 'https://openlibrary.org/search.json?title=';
 
