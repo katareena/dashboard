@@ -17,7 +17,7 @@ export const sidebarMainData = [
     button: true,
   },
   {
-    label: 'Product',
+    label: 'Products',
     icon: <ProductsIcon />,
     to: AppRoute.Products,
     button: true,

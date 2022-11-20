@@ -122,8 +122,8 @@
 
 .search__add-button {
   @media screen and (min-width: v.$tabletWidth) {
-    &:hover svg {
-      stroke: v.$accent1;
+    &:hover {
+      background-color: rgba(v.$accent2, 0.85);  
     }
   }
 }
